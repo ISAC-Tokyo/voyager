@@ -34,13 +34,13 @@ CREATE TABLE `pv_scenes` (
 --
 
 LOCK TABLES `pv_scenes` WRITE;
-/*!40000 ALTER TABLE `pv_values` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pv_scenes` DISABLE KEYS */;
 INSERT INTO `pv_scenes` VALUES (1,'link1.html');
 INSERT INTO `pv_scenes` VALUES (2,'link2.html');
 INSERT INTO `pv_scenes` VALUES (3,'link3.html');
 INSERT INTO `pv_scenes` VALUES (4,'link4.html');
 INSERT INTO `pv_scenes` VALUES (5,'link5.html');
-/*!40000 ALTER TABLE `pv_values` ENABLE KEYS */;
+/*!40000 ALTER TABLE `pv_scenes` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
