@@ -3,3 +3,4 @@
 	$mysql_user = "ueno";
 	$mysql_password = "ueno";
 	$mysql_db = "pvoyager";
+	$isDebug = false;
