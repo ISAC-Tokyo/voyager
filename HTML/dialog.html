@@ -25,7 +25,10 @@
 			{cmd: "talk", context:1024, text: encodeURIComponent(textData)},
 			function(data){
 				var sceneAndAnswer = data.split("\t");
-				document.getElementById("herText").innerHTML = sceneAndAnswer[1];
+				var herAnswer = sceneAndAnswer[1];
+				herAnswer = herAnswer.split("%1").join("<a href='" + sceneAndAnswer[0] + "'>");
+				herAnswer = herAnswer.split("%2").join("</a>");
+				document.getElementById("herText").innerHTML = herAnswer;
 			});
 	}
 -->
