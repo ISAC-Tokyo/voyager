@@ -9,7 +9,10 @@
 				$.get("api.php",
 					{cmd: "talk", context:1024, text: encodeURIComponent(textData)},
 					function(data){
-						document.getElementById("herText").value = data;
+						var sceneAndText = data.split("\t");
+						document.getElementById("herText").value = sceneAndText[1];
+						document.getElementById("herText").value += "\n\n次のシーンID: " + sceneAndText[0];
+
 					});
 			}
 		</script>
