@@ -1,4 +1,4 @@
-# Voyager
+#VOY∀GER
 
 This project is solving the __Adopt a Spacecraft: Voyager 1 challenge__.
 
