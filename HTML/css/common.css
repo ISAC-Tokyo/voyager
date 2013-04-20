@@ -94,9 +94,10 @@ a:visited {
 .ly-section-01 {
   width: 260px;
   margin: 0 auto;
-  padding: 40px 30px 50px;
+  padding: 40px 30px 60px;
 }
-.ly-section-01 h1 {
+.ly-section-01 h1,
+.ly-section-01 h2 {
   text-align: center;
   margin-bottom: 2em;
   font-weight: bold;
@@ -109,7 +110,7 @@ a:visited {
 .ly-section-02 {
   width: 260px;
   margin: 0 auto;
-  padding: 40px 30px 50px;
+  padding: 40px 30px 60px;
 }
 .ly-section-02 h1 {
   padding-right: 1em;
@@ -221,7 +222,8 @@ textarea {
   border-radius: 5px;
 }
 
-input[type=submit] {
+input[type=submit],
+.md-btn-01 a {
   width: 130px;
   padding: 10px;
   display: block;
@@ -244,10 +246,13 @@ input[type=submit] {
   background-image: -ms-linear-gradient(top, #fffaf2 0%, #ffc38e 50%, #ff9c4e 51%, #ff743a 100%);
   background-image: linear-gradient(top, #fffaf2 0%, #ffc38e 50%, #ff9c4e 51%, #ff743a 100%);
   text-shadow: 1px 1px 3px #FC7339;
+  text-align: center;
   font-size: 26px;
   font-weight: bold;
   font-family: cursive;
   cursor: pointer;
+  display: block;
+  color: #000;
 }
 
 .md-link-01 {
@@ -280,4 +285,13 @@ input[type=submit] {
   text-align: center;
   text-decoration: underline;
   font-size: 13px;
+}
+
+.md-figure-01 {
+  width: 316px;
+  margin: 0 0 10px -30px;
+  border: #fff 2px solid;
+}
+.md-figure-01 img {
+  line-height: 1;
 }

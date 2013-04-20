@@ -65,7 +65,8 @@ textarea {
 		border:#FFF 2px solid;
 		@include border-radius(5px);
 }
-input[type=submit] {
+input[type=submit],
+.md-btn-01 a {
 	width:130px;
 	padding:10px;
 	display:block;
@@ -77,10 +78,13 @@ input[type=submit] {
 	@include filter-gradient(#fffaf2, #ff743a, vertical);
 	@include background-image(linear-gradient(top,  #fffaf2 0%,#ffc38e 50%,#ff9c4e 51%,#ff743a 100%));
 	text-shadow: 1px 1px 3px #FC7339;
+	text-align:center;
 	font-size:26px;
 	font-weight:bold;
 	font-family:cursive;
 	cursor:pointer;
+	display:block;
+		color:#000;
 }
 .md-link-01 {
 	margin-top:10px;
@@ -115,4 +119,13 @@ input[type=submit] {
 	text-align:center;
 	text-decoration:underline;
 	font-size:13px;
+}
+.md-figure-01 {
+	width:316px;
+	margin:0 0 10px -30px;
+	border:#fff 2px solid;
+	//
+	img {
+		line-height:1;
+	}
 }
