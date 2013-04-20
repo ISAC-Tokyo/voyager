@@ -97,6 +97,7 @@ CREATE TABLE `pv_values` (
   `pvv_value` int(11) NOT NULL COMMENT 'key',
   `pvv_result` text COLLATE utf8_unicode_ci NOT NULL COMMENT 'voyagerの返事',
   `pvv_sex` int(11) DEFAULT NULL COMMENT '性別, 1=male, 2=female',
+  `pvv_scene_id` int(11) NOT NULL,
   PRIMARY KEY (`pvv_id`),
   KEY `pvv_value` (`pvv_value`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -108,13 +109,13 @@ CREATE TABLE `pv_values` (
 
 LOCK TABLES `pv_values` WRITE;
 /*!40000 ALTER TABLE `pv_values` DISABLE KEYS */;
-INSERT INTO `pv_values` VALUES (1,-1,'えっ、どこのこと？もう一回言ってみて。',2);
-INSERT INTO `pv_values` VALUES (2,0,'何も思い浮かばないわ..もう一回言ってみて。',2);
-INSERT INTO `pv_values` VALUES (3,1032,'木星はとっても大きかったわ',2);
-INSERT INTO `pv_values` VALUES (4,1028,'木星はしましまがきれいだったの',2);
-INSERT INTO `pv_values` VALUES (5,1056,'木星はほとんど水素でできていると言えたわ',2);
-INSERT INTO `pv_values` VALUES (6,1088,'木星にはとても強い磁場があったのよ',2);
-INSERT INTO `pv_values` VALUES (7,1040,'木星には衛星がいくつもあったの',2);
+INSERT INTO `pv_values` VALUES (1,-1,'えっ、どこのこと？もう一回言ってみて。',2,0);
+INSERT INTO `pv_values` VALUES (2,0,'何も思い浮かばないわ..もう一回言ってみて。',2,0);
+INSERT INTO `pv_values` VALUES (3,1032,'木星はとっても大きかったわ',2,2);
+INSERT INTO `pv_values` VALUES (4,1028,'木星はしましまがきれいだったの',2,5);
+INSERT INTO `pv_values` VALUES (5,1056,'木星はほとんど水素でできていると言えたわ',2,3);
+INSERT INTO `pv_values` VALUES (6,1088,'木星にはとても強い磁場があったのよ',2,4);
+INSERT INTO `pv_values` VALUES (7,1040,'木星には衛星がいくつもあったの',2,1);
 /*!40000 ALTER TABLE `pv_values` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -163,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-04-20 22:05:50
+-- Dump completed on 2013-04-20 23:14:11
