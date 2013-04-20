@@ -12,7 +12,7 @@ if ($command == "getContext") {
 	$context = $_GET["context"] + 0;
 	$sex = 2;
 
-	$mysql = mysql_connect("localhost", "root", "root");
+	$mysql = mysql_connect($mysql_host, $mysql_user, $mysql_password);
 	mysql_select_db($mysql_db);
 
 	if ( $context != 0 ){
@@ -86,6 +86,7 @@ if ($command == "getContext") {
 	$res = mysql_query($query);
 	$unknownAnswer = "";
 	$answer = "";
+	$sceneId = 0;
 	while( $ret = mysql_fetch_array($res) ){
 //		echo $ret["pvv_value"]."\n";
 		if ( $ret["pvv_value"] == 0 ) {
@@ -95,14 +96,20 @@ if ($command == "getContext") {
 		}
 		elseif ( $ret["pvv_value"] == -1 ) $unknownAnswer = $ret["pvv_result"];
 		else {
-			if ( $answer == "" || $ret["pvv_value"] == $compositePropertyValue)
+			if ( $answer == "" || $ret["pvv_value"] == $compositePropertyValue) {
 				$answer = $ret["pvv_result"];
+				$sceneId = $ret["pvv_scene_id"];
+			}
 		}
 //		echo $unknownAnswer;
 	}
+	echo $sceneId."\t";
+
 	if ( $answer != "" ) echo $answer;
 	else echo $unknownAnswer;
 
-	echo "\n\n\n" . "[debug] hit words : ";
-	print_r( $debug_hit_words );
+	if ($isDebug) {
+		echo "\n\n\n" . "[debug] hit words : ";
+		print_r( $debug_hit_words );
+	}
 }
