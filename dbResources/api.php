@@ -106,7 +106,7 @@ if ($command == "getContext") {
 
 	$scenePath = "";
 	if ( $sceneId != 0 ) {
-		$query = "select * from `pv_scenes` where `pvc_id` = " . %sceneId;
+		$query = "select * from `pv_scenes` where `pvc_id` = " . $sceneId;
 		$res = mysql_query( $query );
 		while( $ret = mysql_fetch_array($res) ) {
 			$scenePath = $ret["pvc_path"];
