@@ -11,3 +11,106 @@
 /* Mudule Style
    ========================================================================== */
 /*  */
+.md-dialog-chara-01 {
+	position:relative;
+	width:145px;
+	height:223px;
+	margin:-220px 0 0 auto;
+	background:url(../img/chara-voyager.png) no-repeat 100% 100%;
+	background-size:145px 223px;
+}
+.md-dialog-box-01 {
+		width:96%;
+		margin-bottom:10px;
+		padding:2%;
+		border:#FFF 2px solid;
+		@include border-radius(5px);
+		background-color: #eeeeee;
+		@include filter-gradient(#eeeeee, #ffffff, vertical);
+		@include background-image(linear-gradient(top,  #eeeeee 0%,#ffffff 64%));
+		color:#333;
+		line-height:1.6;
+}
+.md-dialog-box-02 {
+		width:92%;
+		padding:10px 4%;
+		border:#333 2px solid;
+		@include border-radius(5px);
+		background-color: #444;
+		@include filter-gradient(#444, #000, vertical);
+		@include background-image(linear-gradient(top,  #444 0%,#000 30%));
+		color:#333;
+		line-height:1.6;
+		//
+		#{$hn}  {
+			padding-bottom:10px;
+			text-align:center;
+			color:#fff;
+			font-size:24px;
+			font-weight:bold;
+			font-family:cursive;
+			text-shadow: 1px 1px 3px #030303;
+	        filter: dropshadow(color=#030303, offx=1, offy=1);
+		}
+}
+textarea {
+		width:96%;
+		margin-bottom:5px;
+		padding:1.4%;
+		height:115px;
+		-webkit-appearance:none;
+		border:#FFF 2px solid;
+		@include border-radius(5px);
+}
+input[type=submit] {
+	width:130px;
+	padding:10px;
+	display:block;
+	margin:0 auto;
+	-webkit-appearance:none;
+	border:#FC7339 2px solid;
+	@include border-radius(5px);
+	background-color: #fffaf2;
+	@include filter-gradient(#fffaf2, #ff743a, vertical);
+	@include background-image(linear-gradient(top,  #fffaf2 0%,#ffc38e 50%,#ff9c4e 51%,#ff743a 100%));
+	text-shadow: 1px 1px 3px #FC7339;
+	font-size:26px;
+	font-weight:bold;
+	font-family:cursive;
+	cursor:pointer;
+}
+.md-link-01 {
+	margin-top:10px;
+	a {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	}
+	li {
+		margin-bottom:10px;
+	}
+	li:first-child {
+		a {
+			display:block;
+			width:61px;
+			height:60px;
+			background:url(../img/btn-map.png) no-repeat 0 0;
+			background-size:61px 60px;
+		}
+	}
+	li:last-child {
+		a {
+			display:block;
+			width:61px;
+			height:60px;
+			background:url(../img/btn-map.png) no-repeat 0 0;
+			background-size:61px 60px;
+		}
+	}
+}
+.md-link-top-01 {
+	margin:20px 0;
+	text-align:center;
+	text-decoration:underline;
+	font-size:13px;
+}
