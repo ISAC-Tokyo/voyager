@@ -16,6 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `pv_scenes`
+--
+
+DROP TABLE IF EXISTS `pv_scenes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pv_scenes` (
+  `pvc_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `pvc_path` varchar(40) COLLATE utf8_unicode_ci NOT NULL COMMENT 'link path',
+  PRIMARY KEY (`pvc_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pv_scenes`
+--
+
+LOCK TABLES `pv_scenes` WRITE;
+/*!40000 ALTER TABLE `pv_values` DISABLE KEYS */;
+INSERT INTO `pv_scenes` VALUES (1,'link1.html');
+INSERT INTO `pv_scenes` VALUES (2,'link2.html');
+INSERT INTO `pv_scenes` VALUES (3,'link3.html');
+INSERT INTO `pv_scenes` VALUES (4,'link4.html');
+INSERT INTO `pv_scenes` VALUES (5,'link5.html');
+/*!40000 ALTER TABLE `pv_values` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `pv_searchwords`
 --
 
