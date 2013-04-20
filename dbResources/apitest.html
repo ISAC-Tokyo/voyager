@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Voyager Test </title>
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript">
+			function onClick() {
+				textData = document.getElementById("myText").value;
+				$.get("api.php",
+					{cmd: "talk", context:1024, text: encodeURIComponent(textData)},
+					function(data){
+						document.getElementById("herText").value = data;
+					});
+			}
+		</script>
+	</head>
+	<body>
+		ステージ : 木星<br>
+		<textarea id="myText" rows="5" cols="100"></textarea><br>
+		<input type="button" value="話しかける" onClick="onClick()"><br>
+		<textarea id="herText" rows="10" cols="100"></textarea><br>
+	</body>
+</html>
