@@ -57,6 +57,7 @@ INSERT INTO `pv_searchwords` VALUES (17,'材料',9);
 INSERT INTO `pv_searchwords` VALUES (18,'磁場',10);
 INSERT INTO `pv_searchwords` VALUES (19,'オーロラ',10);
 INSERT INTO `pv_searchwords` VALUES (20,'月',8);
+INSERT INTO `pv_searchwords` VALUES (21,'moon',8);
 /*!40000 ALTER TABLE `pv_searchwords` ENABLE KEYS */;
 UNLOCK TABLES;
 
