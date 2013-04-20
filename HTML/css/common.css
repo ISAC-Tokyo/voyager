@@ -112,8 +112,10 @@ a:visited {
   padding: 40px 30px 50px;
 }
 .ly-section-02 h1 {
+  padding-right: 1em;
   text-align: right;
   font-size: 18px;
+  font-weight: bold;
 }
 
 .ly-foot {
@@ -137,9 +139,9 @@ a:visited {
 /*  */
 .md-dialog-chara-01 {
   position: relative;
-  width: 145px;
-  height: 223px;
-  margin: -220px 0 0 auto;
+  width: 146px;
+  height: 229px;
+  margin: -200px 0 0 auto;
   background: url(../img/chara-voyager.png) no-repeat 100% 100%;
   background-size: 145px 223px;
 }
@@ -166,6 +168,9 @@ a:visited {
   background-image: linear-gradient(top, #eeeeee 0%, #ffffff 64%);
   color: #333;
   line-height: 1.6;
+}
+.md-dialog-box-01 a {
+  text-decoration: underline;
 }
 
 .md-dialog-box-02 {
@@ -256,19 +261,18 @@ input[type=submit] {
 .md-link-01 li {
   margin-bottom: 10px;
 }
-.md-link-01 li:first-child a {
+.md-link-01 a {
   display: block;
-  width: 61px;
-  height: 60px;
-  background: url(../img/btn-map.png) no-repeat 0 0;
-  background-size: 61px 60px;
+  width: 83px;
+  height: 33px;
+}
+.md-link-01 li:first-child a {
+  background: url(../img/btn-memory.png) no-repeat 0 0;
+  background-size: 83px 33px;
 }
 .md-link-01 li:last-child a {
-  display: block;
-  width: 61px;
-  height: 60px;
   background: url(../img/btn-map.png) no-repeat 0 0;
-  background-size: 61px 60px;
+  background-size: 83px 33px;
 }
 
 .md-link-top-01 {

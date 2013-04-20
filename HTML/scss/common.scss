@@ -13,9 +13,9 @@
 /*  */
 .md-dialog-chara-01 {
 	position:relative;
-	width:145px;
-	height:223px;
-	margin:-220px 0 0 auto;
+	width:146px;
+	height:229px;
+	margin:-200px 0 0 auto;
 	background:url(../img/chara-voyager.png) no-repeat 100% 100%;
 	background-size:145px 223px;
 }
@@ -30,6 +30,9 @@
 		@include background-image(linear-gradient(top,  #eeeeee 0%,#ffffff 64%));
 		color:#333;
 		line-height:1.6;
+		a {
+			text-decoration:underline;
+		}
 }
 .md-dialog-box-02 {
 		width:92%;
@@ -89,22 +92,21 @@ input[type=submit] {
 	li {
 		margin-bottom:10px;
 	}
+	a {
+		display:block;
+		width:83px;
+		height:33px;
+	}
 	li:first-child {
 		a {
-			display:block;
-			width:61px;
-			height:60px;
-			background:url(../img/btn-map.png) no-repeat 0 0;
-			background-size:61px 60px;
+			background:url(../img/btn-memory.png) no-repeat 0 0;
+			background-size:83px 33px;
 		}
 	}
 	li:last-child {
 		a {
-			display:block;
-			width:61px;
-			height:60px;
 			background:url(../img/btn-map.png) no-repeat 0 0;
-			background-size:61px 60px;
+			background-size:83px 33px;
 		}
 	}
 }
