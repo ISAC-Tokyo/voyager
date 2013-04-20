@@ -12,9 +12,9 @@ Then, let's enjoy our story with us. "Bon Voyage !"
 1. You have to prepare a MYSQL + PHP + Web server somewhere.
 
 2. Make "pvoyager" database on your MYSQL server and run dbResources/pvoyager.sql.
-ex.) mysql -u <username> -p pvoyager < dbResources/pvoyager.sql
+ex.) mysql -u &lt;username&gt; -p pvoyager < dbResources/pvoyager.sql
 
-3. Put dbResources/api.php and dbResouces/config.php on your PHP server.
+3. Put dbResources/api.php and dbResouces/config.php on your Web server.
 
 4. Open above config.php and write your configuration for your MYSQL server.
 
