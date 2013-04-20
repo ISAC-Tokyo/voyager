@@ -15,6 +15,21 @@
 <meta property="fb:app_id" content="182201951845476">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="css/common.css">
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/pvoyager.js"></script>
+<script type="text/javascript">
+<!--
+	function onClick() {
+		textData = document.getElementById("myText").value;
+		$.get(apiUrl,
+			{cmd: "talk", context:1024, text: encodeURIComponent(textData)},
+			function(data){
+				var sceneAndAnswer = data.split("\t");
+				document.getElementById("herText").innerHTML = sceneAndAnswer[1];
+			});
+	}
+-->
+</script>
 </head>
 <body>
 <div class="ly-wrap">
@@ -32,13 +47,13 @@
 <div class="md-dialog-chara-01"></div>
 
 <div class="md-dialog-box-01">
-<p>木星まで戻ってきたよ。大きいねえ。なんだか<a href="#">懐かしいような</a>気がする。</p>
+<p id="herText">木星まで戻ってきたよ。大きいねえ。なんだか<a href="#">懐かしいような</a>気がする。</p>
 <!--/.md-dialog-box-01 --></div>
 
 <div class="md-dialog-box-02">
 <h2>Ask to Voyager</h2>
-<form action="">
-<textarea name="" id=""></textarea>
+<form action="javascript:onClick();">
+<textarea name="" id="myText"></textarea>
 <input type="submit" value="Ask">
 </form>
 <!--/.md-dialog-box-02 --></div>
