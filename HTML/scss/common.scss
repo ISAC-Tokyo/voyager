@@ -11,6 +11,24 @@
 /* Mudule Style
    ========================================================================== */
 /*  */
+.md-dialog-chara-01,
+.md-dialog-chara-02,
+.md-dialog-chara-03 {
+	position:relative;
+	width:146px;
+	height:229px;
+	margin:-200px 0 0 auto;
+}
+.md-dialog-chara-02 {
+	display:none;
+	background:url(../img/chara-voyager-good.png) no-repeat 100% 100%;
+	background-size:145px 223px;
+}
+.md-dialog-chara-03 {
+	display:none;
+	background:url(../img/chara-voyager-sad.png) no-repeat 100% 100%;
+	background-size:145px 223px;
+}
 .md-dialog-chara-01 {
 	position:relative;
 	width:146px;
@@ -31,6 +49,7 @@
 		color:#333;
 		line-height:1.6;
 		a {
+			color:#F93;
 			text-decoration:underline;
 		}
 }
@@ -124,6 +143,8 @@ input[type=submit],
 	width:316px;
 	margin:0 0 10px -30px;
 	border:#fff 2px solid;
+	line-height:1;
+	font-size:0;
 	//
 	img {
 		line-height:1;
