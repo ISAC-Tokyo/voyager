@@ -16,31 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `pv_logs`
---
-
-DROP TABLE IF EXISTS `pv_logs`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pv_logs` (
-  `pvl_id` int(11) NOT NULL AUTO_INCREMENT,
-  `pvl_input` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `pvl_time` datetime DEFAULT NULL,
-  `pvl_success` int(11) NOT NULL,
-  PRIMARY KEY (`pvl_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `pv_logs`
---
-
-LOCK TABLES `pv_logs` WRITE;
-/*!40000 ALTER TABLE `pv_logs` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pv_logs` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `pv_scenes`
 --
 
@@ -81,7 +56,7 @@ CREATE TABLE `pv_searchwords` (
   `pvs_word_id` int(11) DEFAULT NULL COMMENT '結果単語',
   PRIMARY KEY (`pvs_id`),
   KEY `pvs_sword` (`pvs_sword`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -114,6 +89,17 @@ INSERT INTO `pv_searchwords` VALUES (21,'moon',8);
 INSERT INTO `pv_searchwords` VALUES (22,'かわいい',11);
 INSERT INTO `pv_searchwords` VALUES (23,'可愛い',11);
 INSERT INTO `pv_searchwords` VALUES (24,'カワイイ',11);
+INSERT INTO `pv_searchwords` VALUES (25,'イオ',8);
+INSERT INTO `pv_searchwords` VALUES (26,'タイタン',8);
+INSERT INTO `pv_searchwords` VALUES (27,'おおきさ',6);
+INSERT INTO `pv_searchwords` VALUES (28,'模様',5);
+INSERT INTO `pv_searchwords` VALUES (29,'だいせきはん',7);
+INSERT INTO `pv_searchwords` VALUES (30,'縞',5);
+INSERT INTO `pv_searchwords` VALUES (31,'模様',5);
+INSERT INTO `pv_searchwords` VALUES (32,'目玉',7);
+INSERT INTO `pv_searchwords` VALUES (33,'大赤はん',7);
+INSERT INTO `pv_searchwords` VALUES (34,'大赤斑',7);
+INSERT INTO `pv_searchwords` VALUES (35,'渦',7);
 /*!40000 ALTER TABLE `pv_searchwords` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,7 +143,7 @@ CREATE TABLE `pv_values` (
   `pvv_scene_id` int(11) NOT NULL,
   PRIMARY KEY (`pvv_id`),
   KEY `pvv_value` (`pvv_value`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,6 +160,7 @@ INSERT INTO `pv_values` VALUES (5,1056,'木星はほとんど%1水素ででき�
 INSERT INTO `pv_values` VALUES (6,1088,'木星にはとても%1強い磁場%2があったのよ',2,4);
 INSERT INTO `pv_values` VALUES (7,1040,'木星には%1衛星%2がいくつもあったの',2,2);
 INSERT INTO `pv_values` VALUES (8,1152,'えっ……そんなこと言われたら、データが消えちゃいそうですよぉ',2,0);
+INSERT INTO `pv_values` VALUES (9,1026,'木星は%1しましま%2がきれいだったの',2,1);
 /*!40000 ALTER TABLE `pv_values` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -209,7 +196,7 @@ INSERT INTO `pv_words` VALUES (6,'サイズ',2,8);
 INSERT INTO `pv_words` VALUES (7,'木星の模様',2,4);
 INSERT INTO `pv_words` VALUES (8,'衛星',2,16);
 INSERT INTO `pv_words` VALUES (9,'組成',2,32);
-INSERT INTO `pv_words` VALUES (10,'磁',2,64);
+INSERT INTO `pv_words` VALUES (10,'磁場',2,64);
 INSERT INTO `pv_words` VALUES (11,'可愛い',2,128);
 /*!40000 ALTER TABLE `pv_words` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -223,4 +210,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-04-21 22:00:43
+-- Dump completed on 2013-04-22  8:11:00
