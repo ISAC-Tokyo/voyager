@@ -95,7 +95,7 @@ INSERT INTO `pv_searchwords` VALUES (27,'おおきさ',6);
 INSERT INTO `pv_searchwords` VALUES (28,'模様',5);
 INSERT INTO `pv_searchwords` VALUES (29,'だいせきはん',7);
 INSERT INTO `pv_searchwords` VALUES (30,'縞',5);
-INSERT INTO `pv_searchwords` VALUES (31,'模様',5);
+INSERT INTO `pv_searchwords` VALUES (31,'もよう',5);
 INSERT INTO `pv_searchwords` VALUES (32,'目玉',7);
 INSERT INTO `pv_searchwords` VALUES (33,'大赤はん',7);
 INSERT INTO `pv_searchwords` VALUES (34,'大赤斑',7);
