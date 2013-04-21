@@ -11,6 +11,24 @@
 /* Mudule Style
    ========================================================================== */
 /*  */
+.md-dialog-chara-01,
+.md-dialog-chara-02,
+.md-dialog-chara-03 {
+	position:relative;
+	width:146px;
+	height:229px;
+	margin:-200px 0 0 auto;
+}
+.md-dialog-chara-02 {
+	display:none;
+	background:url(../img/chara-voyager-good.png) no-repeat 100% 100%;
+	background-size:145px 223px;
+}
+.md-dialog-chara-03 {
+	display:none;
+	background:url(../img/chara-voyager-sad.png) no-repeat 100% 100%;
+	background-size:145px 223px;
+}
 .md-dialog-chara-01 {
 	position:relative;
 	width:146px;
