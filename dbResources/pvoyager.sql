@@ -138,13 +138,13 @@ CREATE TABLE `pv_values` (
 
 LOCK TABLES `pv_values` WRITE;
 /*!40000 ALTER TABLE `pv_values` DISABLE KEYS */;
-INSERT INTO `pv_values` VALUES (1,-1,'えっ、どこのこと？もう一回言ってみて。',2,0);
-INSERT INTO `pv_values` VALUES (2,0,'何も思い浮かばないわ..もう一回言ってみて。',2,0);
-INSERT INTO `pv_values` VALUES (3,1032,'木星はとっても%1大きかった%2わ',2,2);
-INSERT INTO `pv_values` VALUES (4,1028,'木星は%1しましま%2がきれいだったの',2,5);
+INSERT INTO `pv_values` VALUES (1,-1,'えっ、どこのこと？もう一回言ってみて',2,0);
+INSERT INTO `pv_values` VALUES (2,0,'何も思い浮かばないの...もう一回言ってみて',2,0);
+INSERT INTO `pv_values` VALUES (3,1032,'木星はとっても%1大きかった%2わ',2,3);
+INSERT INTO `pv_values` VALUES (4,1028,'木星は%1しましま%2がきれいだったの',2,1);
 INSERT INTO `pv_values` VALUES (5,1056,'木星はほとんど%1水素でできている%2と言えたわ',2,3);
 INSERT INTO `pv_values` VALUES (6,1088,'木星にはとても%1強い磁場%2があったのよ',2,4);
-INSERT INTO `pv_values` VALUES (7,1040,'木星には%1衛星%2がいくつもあったの',2,1);
+INSERT INTO `pv_values` VALUES (7,1040,'木星には%1衛星%2がいくつもあったの',2,2);
 /*!40000 ALTER TABLE `pv_values` ENABLE KEYS */;
 UNLOCK TABLES;
 
