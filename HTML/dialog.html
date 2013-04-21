@@ -3,18 +3,19 @@
 <head>
 <meta charset="utf-8">
 <title>VOY∀GER</title><meta name="viewport" content="width=device-width,minimum-scale=1, maximum-scale=1">
-<meta name="Description" content="The main purpose of our project is to know the Solar System, using a kind of "RPG" game based on a web application.">
+<meta name="Description" content="The voyage arcorss the Solar System with a cute, amnesia girl named as &quot;Voyager&quot;, whose identity is a humanoid Voyager spacecraft">
 <meta name="Keywords" content="Voyager,Solar System">
 <meta property="og:title" content="VOY∀GER">
 <meta property="og:type" content="website">
 <meta property="og:url" content="http://planetarhythm.com/">
-<meta property="og:description" content="The main purpose of our project is to know the Solar System, using a kind of "RPG" game based on a web application.">
+<meta property="og:description" content="The voyage arcorss the Solar System with a cute, amnesia girl named as &quot;Voyager&quot;, whose identity is a humanoid Voyager spacecraft">
 <meta property="og:image" content="http://planetarhythm.com/shared/img/img_site.gif">
 <meta property="og:site_name" content="VOY∀GER">
 <meta property="fb:app_id" content="182201951845476">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="css/common.css">
 <script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/common.js"></script>
 <script src="js/pvoyager.js"></script>
 <script type="text/javascript">
 <!--
@@ -25,9 +26,19 @@
 			function(data){
 				var sceneAndAnswer = data.split("\t");
 				var herAnswer = sceneAndAnswer[1];
+
+				document.getElementById("charaNormal").style.display = "none";
+				if ( sceneAndAnswer[0] != "") {
+					document.getElementById("charaGlad").style.display = "block";
+					document.getElementById("charaSad").style.display = "none";
+				} else {
+					document.getElementById("charaGlad").style.display = "none";
+					document.getElementById("charaSad").style.display = "block";
+				}
 				herAnswer = herAnswer.split("%1").join("<a href='" + sceneAndAnswer[0] + "'>");
 				herAnswer = herAnswer.split("%2").join("</a>");
 				document.getElementById("herText").innerHTML = herAnswer;
+				window.scrollTo(0, 35);
 			});
 	}
 -->
@@ -46,28 +57,30 @@
 	<li><a href="#">Map</a></li>
 </ul>
 
-<div class="md-dialog-chara-01"></div>
+<div class="md-dialog-chara-01" id="charaNormal"></div>
+<div class="md-dialog-chara-02" id="charaGlad"></div>
+<div class="md-dialog-chara-03" id="charaSad"></div>
 
 <div class="md-dialog-box-01">
-<p id="herText">木星まで戻ってきたよ。大きいねえ。なんだか<a href="ex-jupiter-01.html">懐かしいような</a>気がする。</p>
+<p id="herText">木星まで戻ってきたよ。大きいねえ。なんだか懐かしいような気がする。</p>
 <!--/.md-dialog-box-01 --></div>
 
 <div class="md-dialog-box-02">
-<h2>Ask your Question!</h2>
+<h2>Ask your question!</h2>
 <form action="javascript:onClick();">
-<textarea name="" id="myText"></textarea>
+<textarea name="" id="myText" placeholder="木星について質問し、記憶を呼び覚まそう"></textarea>
 <input type="submit" value="Ask">
 </form>
 <!--/.md-dialog-box-02 --></div>
 
-<p class="md-link-top-01"><a href="#">VOY∀GER TOP</a></p>
+<p class="md-link-top-01"><a href="index.html">VOY∀GER TOP</a></p>
 <!--/.ly-section-02 --></div>
 </section>
 
 <!--/.ly-wrap --></div>
 
 <div class="ly-foot">
-<p><small>&copy;Planetarythm: Towards the Nature of Planets</small></p>
+<p><small>&copy;Planetarhythm: Towards the Nature of Planets</small></p>
 <!--/.ly-foot --></div>
 
 </body>
