@@ -16,6 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `pv_logs`
+--
+
+DROP TABLE IF EXISTS `pv_logs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pv_logs` (
+  `pvl_id` int(11) NOT NULL AUTO_INCREMENT,
+  `pvl_input` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `pvl_time` datetime DEFAULT NULL,
+  `pvl_success` int(11) NOT NULL,
+  PRIMARY KEY (`pvl_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pv_logs`
+--
+
+LOCK TABLES `pv_logs` WRITE;
+/*!40000 ALTER TABLE `pv_logs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pv_logs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `pv_scenes`
 --
 
@@ -56,7 +81,7 @@ CREATE TABLE `pv_searchwords` (
   `pvs_word_id` int(11) DEFAULT NULL COMMENT '結果単語',
   PRIMARY KEY (`pvs_id`),
   KEY `pvs_sword` (`pvs_sword`)
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -82,7 +107,7 @@ INSERT INTO `pv_searchwords` VALUES (14,'なにでできて',9);
 INSERT INTO `pv_searchwords` VALUES (15,'なにで出来て',9);
 INSERT INTO `pv_searchwords` VALUES (16,'素材',9);
 INSERT INTO `pv_searchwords` VALUES (17,'材料',9);
-INSERT INTO `pv_searchwords` VALUES (18,'磁',10);
+INSERT INTO `pv_searchwords` VALUES (18,'磁場',10);
 INSERT INTO `pv_searchwords` VALUES (19,'オーロラ',10);
 INSERT INTO `pv_searchwords` VALUES (20,'月',8);
 INSERT INTO `pv_searchwords` VALUES (21,'moon',8);
@@ -184,7 +209,7 @@ INSERT INTO `pv_words` VALUES (6,'サイズ',2,8);
 INSERT INTO `pv_words` VALUES (7,'木星の模様',2,4);
 INSERT INTO `pv_words` VALUES (8,'衛星',2,16);
 INSERT INTO `pv_words` VALUES (9,'組成',2,32);
-INSERT INTO `pv_words` VALUES (10,'磁場',2,64);
+INSERT INTO `pv_words` VALUES (10,'磁',2,64);
 INSERT INTO `pv_words` VALUES (11,'可愛い',2,128);
 /*!40000 ALTER TABLE `pv_words` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -198,4 +223,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-04-20 23:14:11
+-- Dump completed on 2013-04-21 22:00:43
