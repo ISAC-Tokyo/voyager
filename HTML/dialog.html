@@ -25,6 +25,15 @@
 			function(data){
 				var sceneAndAnswer = data.split("\t");
 				var herAnswer = sceneAndAnswer[1];
+
+				document.getElementById("charaNormal").style.display = "none";
+				if ( sceneAndAnswer[0] != "") {
+					document.getElementById("charaGlad").style.display = "block";
+					document.getElementById("charaSad").style.display = "none";
+				} else {
+					document.getElementById("charaGlad").style.display = "none";
+					document.getElementById("charaSad").style.display = "block";
+				}
 				herAnswer = herAnswer.split("%1").join("<a href='" + sceneAndAnswer[0] + "'>");
 				herAnswer = herAnswer.split("%2").join("</a>");
 				document.getElementById("herText").innerHTML = herAnswer;
@@ -46,9 +55,9 @@
 	<li><a href="#">Map</a></li>
 </ul>
 
-<div class="md-dialog-chara-01"></div>
-<div class="md-dialog-chara-02"></div>
-<div class="md-dialog-chara-03"></div>
+<div class="md-dialog-chara-01" id="charaNormal"></div>
+<div class="md-dialog-chara-02" id="charaGlad"></div>
+<div class="md-dialog-chara-03" id="charaSad"></div>
 
 <div class="md-dialog-box-01">
 <p id="herText">木星まで戻ってきたよ。大きいねえ。なんだか<a href="ex-jupiter-01.html">懐かしいような</a>気がする。</p>
