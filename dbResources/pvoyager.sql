@@ -82,7 +82,7 @@ INSERT INTO `pv_searchwords` VALUES (14,'なにでできて',9);
 INSERT INTO `pv_searchwords` VALUES (15,'なにで出来て',9);
 INSERT INTO `pv_searchwords` VALUES (16,'素材',9);
 INSERT INTO `pv_searchwords` VALUES (17,'材料',9);
-INSERT INTO `pv_searchwords` VALUES (18,'磁場',10);
+INSERT INTO `pv_searchwords` VALUES (18,'磁',10);
 INSERT INTO `pv_searchwords` VALUES (19,'オーロラ',10);
 INSERT INTO `pv_searchwords` VALUES (20,'月',8);
 INSERT INTO `pv_searchwords` VALUES (21,'moon',8);
