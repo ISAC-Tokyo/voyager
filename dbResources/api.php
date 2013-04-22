@@ -51,27 +51,30 @@ if ($command == "getContext") {
 	}
 	$ids = trim($ids, ",");
 
-	// 候補のワード一覧を取得
-	$query = "select * from `pv_words` where `pvw_id` in (".$ids.")";
-
-	$res = mysql_query($query);
-
-	$typeCounts = Array();
-
 	$locationValue = 0;
 	$firstHitValue = 0;
 	$compositePropertyValue = 0;
 
-	while( $ret = mysql_fetch_array($res) ){
-		array_push($debug_hit_words, $ret["pvw_word"]);
-		$typeCounts[$ret["pvw_type"]] = ($typeCounts[$ret["pvw_type"]] + 0) + 1;
-		if ( $ret["pvw_type"] == 2 ) {
-			if ($firstHitValue == 0){
-				$firstHitValue = $ret["pvw_value"];
+	if ( $ids.length > 0 ) {
+		// 候補のワード一覧を取得
+		$query = "select * from `pv_words` where `pvw_id` in (".$ids.")";
+
+		$res = mysql_query($query);
+	//	echo $query;
+
+		$typeCounts = Array();
+
+		while( $ret = mysql_fetch_array($res) ){
+			array_push($debug_hit_words, $ret["pvw_word"]);
+			$typeCounts[$ret["pvw_type"]] = ($typeCounts[$ret["pvw_type"]] + 0) + 1;
+			if ( $ret["pvw_type"] == 2 ) {
+				if ($firstHitValue == 0){
+					$firstHitValue = $ret["pvw_value"];
+				}
+				$compositePropertyValue += $ret["pvw_value"] + 0;
+			} else if ( $ret["pvw_type"] == 1) {
+				$locationValue += $ret["pvw_value"];
 			}
-			$compositePropertyValue += $ret["pvw_value"] + 0;
-		} else if ( $ret["pvw_type"] == 1) {
-			$locationValue += $ret["pvw_value"];
 		}
 	}
 
@@ -114,9 +117,14 @@ if ($command == "getContext") {
 	}
 
 	echo $scenePath."\t";
-
-	if ( $answer != "" ) echo $answer;
-	else echo $unknownAnswer;
+	if ( $answer != "" ) {
+		echo $answer;
+	} else {
+		echo $unknownAnswer;
+	}
+	
+	$query = "insert into `pv_logs` (`pvl_input`, `pvl_time`, `pvl_success`) values ('" . mysql_real_escape_string($text)  . "', cast( now() as datetime ), '" . $sceneId . "')";
+	mysql_query($query);
 
 	if ($isDebug) {
 		echo "\n\n\n" . "[debug] hit words : ";
