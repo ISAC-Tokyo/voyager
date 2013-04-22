@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ========================================================================== *
  
        NEWDAYS
@@ -118,6 +119,9 @@ a:visited {
   font-size: 18px;
   font-weight: bold;
 }
+.ly-section-02 h1 span {
+  font-size: 12px;
+}
 
 .ly-section-03 {
   width: 260px;
@@ -142,6 +146,10 @@ a:visited {
   background-size: 18px 21px;
   font-family: cursive;
   font-size: 24px;
+}
+
+.ly-section-04 {
+  color: #FFF;
 }
 
 .ly-foot {
@@ -325,6 +333,19 @@ input[type=submit],
 .md-link-01 li:last-child a {
   background: url(../img/btn-map.png) no-repeat 0 0;
   background-size: 83px 33px;
+}
+
+.md-link-02 {
+  margin: 20px 0;
+  text-align: center;
+  text-decoration: underline;
+}
+.md-link-02 a:before {
+  display: inline-block;
+  vertical-align: 3px;
+  content: "▶";
+  font-size: 8px;
+  margin-right: 5px;
 }
 
 .md-link-top-01 {

@@ -133,6 +133,19 @@ input[type=submit],
 		}
 	}
 }
+.md-link-02 {
+	margin:20px 0;
+	text-align:center;
+	text-decoration:underline;
+	//
+	a:before {
+		display:inline-block;
+		vertical-align:3px;
+		content:"▶";
+		font-size:8px;
+		margin-right:5px;
+	}
+}
 .md-link-top-01 {
 	margin:20px 0;
 	text-align:center;
