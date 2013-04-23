@@ -26,7 +26,7 @@ CREATE TABLE `pv_scenes` (
   `pvc_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `pvc_path` varchar(40) COLLATE utf8_unicode_ci NOT NULL COMMENT 'link path',
   PRIMARY KEY (`pvc_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +40,11 @@ INSERT INTO `pv_scenes` VALUES (2,'ex-jupiter-02.html');
 INSERT INTO `pv_scenes` VALUES (3,'ex-jupiter-03.html');
 INSERT INTO `pv_scenes` VALUES (4,'ex-jupiter-04.html');
 INSERT INTO `pv_scenes` VALUES (5,'ex-jupiter-05.html');
+INSERT INTO `pv_scenes` VALUES (6,'ex-jupiter-06.html');
+INSERT INTO `pv_scenes` VALUES (7,'ex-jupiter-07.html');
+INSERT INTO `pv_scenes` VALUES (8,'ex-jupiter-08.html');
+INSERT INTO `pv_scenes` VALUES (9,'ex-jupiter-09.html');
+INSERT INTO `pv_scenes` VALUES (10,'ex-jupiter-10.html');
 /*!40000 ALTER TABLE `pv_scenes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -56,7 +61,7 @@ CREATE TABLE `pv_searchwords` (
   `pvs_word_id` int(11) DEFAULT NULL COMMENT '結果単語',
   PRIMARY KEY (`pvs_id`),
   KEY `pvs_sword` (`pvs_sword`)
-) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=189 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,16 +79,16 @@ INSERT INTO `pv_searchwords` VALUES (6,'土星',2);
 INSERT INTO `pv_searchwords` VALUES (7,'衛星',8);
 INSERT INTO `pv_searchwords` VALUES (8,'サイズ',6);
 INSERT INTO `pv_searchwords` VALUES (9,'大き',6);
-INSERT INTO `pv_searchwords` VALUES (10,'半径',6);
-INSERT INTO `pv_searchwords` VALUES (11,'直径',6);
+INSERT INTO `pv_searchwords` VALUES (10,'半径',57);
+INSERT INTO `pv_searchwords` VALUES (11,'直径',57);
 INSERT INTO `pv_searchwords` VALUES (12,'何でできて',9);
 INSERT INTO `pv_searchwords` VALUES (13,'何で出来て',9);
 INSERT INTO `pv_searchwords` VALUES (14,'なにでできて',9);
 INSERT INTO `pv_searchwords` VALUES (15,'なにで出来て',9);
 INSERT INTO `pv_searchwords` VALUES (16,'素材',9);
 INSERT INTO `pv_searchwords` VALUES (17,'材料',9);
-INSERT INTO `pv_searchwords` VALUES (18,'磁場',10);
-INSERT INTO `pv_searchwords` VALUES (19,'オーロラ',10);
+INSERT INTO `pv_searchwords` VALUES (18,'磁場',56);
+INSERT INTO `pv_searchwords` VALUES (19,'オーロラ',60);
 INSERT INTO `pv_searchwords` VALUES (20,'月',8);
 INSERT INTO `pv_searchwords` VALUES (21,'moon',8);
 INSERT INTO `pv_searchwords` VALUES (22,'かわいい',11);
@@ -93,13 +98,13 @@ INSERT INTO `pv_searchwords` VALUES (25,'イオ',18);
 INSERT INTO `pv_searchwords` VALUES (26,'タイタン',12);
 INSERT INTO `pv_searchwords` VALUES (27,'おおきさ',6);
 INSERT INTO `pv_searchwords` VALUES (28,'模様',5);
-INSERT INTO `pv_searchwords` VALUES (29,'だいせきはん',7);
-INSERT INTO `pv_searchwords` VALUES (30,'縞',5);
+INSERT INTO `pv_searchwords` VALUES (29,'だいせきはん',44);
+INSERT INTO `pv_searchwords` VALUES (30,'縞',7);
 INSERT INTO `pv_searchwords` VALUES (31,'もよう',5);
-INSERT INTO `pv_searchwords` VALUES (32,'目玉',7);
-INSERT INTO `pv_searchwords` VALUES (33,'大赤はん',7);
-INSERT INTO `pv_searchwords` VALUES (34,'大赤斑',7);
-INSERT INTO `pv_searchwords` VALUES (35,'渦',7);
+INSERT INTO `pv_searchwords` VALUES (32,'目玉',44);
+INSERT INTO `pv_searchwords` VALUES (33,'大赤はん',44);
+INSERT INTO `pv_searchwords` VALUES (34,'大赤斑',44);
+INSERT INTO `pv_searchwords` VALUES (35,'渦',44);
 INSERT INTO `pv_searchwords` VALUES (36,'距離',13);
 INSERT INTO `pv_searchwords` VALUES (37,'場所',13);
 INSERT INTO `pv_searchwords` VALUES (38,'どこに',13);
@@ -133,8 +138,126 @@ INSERT INTO `pv_searchwords` VALUES (65,'エウロパ',18);
 INSERT INTO `pv_searchwords` VALUES (66,'ガニメデ',18);
 INSERT INTO `pv_searchwords` VALUES (67,'分化',18);
 INSERT INTO `pv_searchwords` VALUES (68,'ガリレオ・ガリレイ',18);
-
-
+INSERT INTO `pv_searchwords` VALUES (69,'質量',19);
+INSERT INTO `pv_searchwords` VALUES (70,'密度',20);
+INSERT INTO `pv_searchwords` VALUES (71,'軽さ',21);
+INSERT INTO `pv_searchwords` VALUES (72,'重さ',21);
+INSERT INTO `pv_searchwords` VALUES (73,'扁平',22);
+INSERT INTO `pv_searchwords` VALUES (74,'丸さ',22);
+INSERT INTO `pv_searchwords` VALUES (75,'誕生',23);
+INSERT INTO `pv_searchwords` VALUES (76,'どうやってでき',23);
+INSERT INTO `pv_searchwords` VALUES (77,'自転',24);
+INSERT INTO `pv_searchwords` VALUES (78,'公転',24);
+INSERT INTO `pv_searchwords` VALUES (79,'一周',24);
+INSERT INTO `pv_searchwords` VALUES (80,'1周',24);
+INSERT INTO `pv_searchwords` VALUES (81,'１周',24);
+INSERT INTO `pv_searchwords` VALUES (82,'電波',25);
+INSERT INTO `pv_searchwords` VALUES (83,'雷',26);
+INSERT INTO `pv_searchwords` VALUES (84,'プラズマ',60);
+INSERT INTO `pv_searchwords` VALUES (85,'トーラス',60);
+INSERT INTO `pv_searchwords` VALUES (86,'極',60);
+INSERT INTO `pv_searchwords` VALUES (87,'探査',27);
+INSERT INTO `pv_searchwords` VALUES (88,'ボイジャー',27);
+INSERT INTO `pv_searchwords` VALUES (89,'ボイジャーちゃん',54);
+INSERT INTO `pv_searchwords` VALUES (90,'あなた',54);
+INSERT INTO `pv_searchwords` VALUES (91,'君',54);
+INSERT INTO `pv_searchwords` VALUES (92,'ガリレオ',27);
+INSERT INTO `pv_searchwords` VALUES (93,'ジュノー',27);
+INSERT INTO `pv_searchwords` VALUES (94,'カッシーニ',27);
+INSERT INTO `pv_searchwords` VALUES (95,'パイオニア',27);
+INSERT INTO `pv_searchwords` VALUES (96,'ユリシーズ',27);
+INSERT INTO `pv_searchwords` VALUES (97,'プローブ',27);
+INSERT INTO `pv_searchwords` VALUES (98,'Voyager',27);
+INSERT INTO `pv_searchwords` VALUES (99,'Galileo',27);
+INSERT INTO `pv_searchwords` VALUES (100,'Juno',27);
+INSERT INTO `pv_searchwords` VALUES (101,'Ulysses',27);
+INSERT INTO `pv_searchwords` VALUES (102,'Cassini',27);
+INSERT INTO `pv_searchwords` VALUES (103,'Pioneer',27);
+INSERT INTO `pv_searchwords` VALUES (104,'ガス',28);
+INSERT INTO `pv_searchwords` VALUES (105,'主成分',29);
+INSERT INTO `pv_searchwords` VALUES (106,'水素',30);
+INSERT INTO `pv_searchwords` VALUES (107,'空気',31);
+INSERT INTO `pv_searchwords` VALUES (108,'大気',32);
+INSERT INTO `pv_searchwords` VALUES (109,'希ガス',33);
+INSERT INTO `pv_searchwords` VALUES (110,'エンベロープ',34);
+INSERT INTO `pv_searchwords` VALUES (111,'年齢',35);
+INSERT INTO `pv_searchwords` VALUES (112,'歳',35);
+INSERT INTO `pv_searchwords` VALUES (113,'いくつ？',35);
+INSERT INTO `pv_searchwords` VALUES (114,'冷却',36);
+INSERT INTO `pv_searchwords` VALUES (115,'収縮',36);
+INSERT INTO `pv_searchwords` VALUES (116,'ダイナモ',37);
+INSERT INTO `pv_searchwords` VALUES (117,'双極子',56);
+INSERT INTO `pv_searchwords` VALUES (118,'磁石',56);
+INSERT INTO `pv_searchwords` VALUES (119,'金属水素',38);
+INSERT INTO `pv_searchwords` VALUES (120,'金属水素',38);
+INSERT INTO `pv_searchwords` VALUES (121,'ホットジュピター',39);
+INSERT INTO `pv_searchwords` VALUES (122,'灼熱',39);
+INSERT INTO `pv_searchwords` VALUES (123,'ジュピター',40);
+INSERT INTO `pv_searchwords` VALUES (124,'Jupiter',40);
+INSERT INTO `pv_searchwords` VALUES (125,'ガス惑星',55);
+INSERT INTO `pv_searchwords` VALUES (126,'円盤不安定',41);
+INSERT INTO `pv_searchwords` VALUES (127,'重力不安定',41);
+INSERT INTO `pv_searchwords` VALUES (128,'自己重力',41);
+INSERT INTO `pv_searchwords` VALUES (129,'コア',42);
+INSERT INTO `pv_searchwords` VALUES (130,'核',42);
+INSERT INTO `pv_searchwords` VALUES (131,'中心',61);
+INSERT INTO `pv_searchwords` VALUES (132,'岩石',43);
+INSERT INTO `pv_searchwords` VALUES (133,'鉄',43);
+INSERT INTO `pv_searchwords` VALUES (134,'シリケイト',43);
+INSERT INTO `pv_searchwords` VALUES (135,'氷',43);
+INSERT INTO `pv_searchwords` VALUES (136,'内部',43);
+INSERT INTO `pv_searchwords` VALUES (137,'三層',43);
+INSERT INTO `pv_searchwords` VALUES (138,'白班',45);
+INSERT INTO `pv_searchwords` VALUES (139,'オーバルBA',45);
+INSERT INTO `pv_searchwords` VALUES (140,'東西風',5);
+INSERT INTO `pv_searchwords` VALUES (141,'zonal wind',5);
+INSERT INTO `pv_searchwords` VALUES (142,'台風',5);
+INSERT INTO `pv_searchwords` VALUES (143,'帯状風',5);
+INSERT INTO `pv_searchwords` VALUES (144,'風速',5);
+INSERT INTO `pv_searchwords` VALUES (145,'表面',5);
+INSERT INTO `pv_searchwords` VALUES (146,'雲',47);
+INSERT INTO `pv_searchwords` VALUES (147,'アンモニア',47);
+INSERT INTO `pv_searchwords` VALUES (148,'硫化水素',47);
+INSERT INTO `pv_searchwords` VALUES (149,'硫酸アンモニウム',47);
+INSERT INTO `pv_searchwords` VALUES (150,'H2S',47);
+INSERT INTO `pv_searchwords` VALUES (151,'NH3',47);
+INSERT INTO `pv_searchwords` VALUES (152,'NH4HS',47);
+INSERT INTO `pv_searchwords` VALUES (153,'臭い',48);
+INSERT INTO `pv_searchwords` VALUES (154,'匂い',48);
+INSERT INTO `pv_searchwords` VALUES (155,'におい',48);
+INSERT INTO `pv_searchwords` VALUES (156,'くさい',48);
+INSERT INTO `pv_searchwords` VALUES (157,'色',49);
+INSERT INTO `pv_searchwords` VALUES (158,'オレンジ',49);
+INSERT INTO `pv_searchwords` VALUES (159,'橙',49);
+INSERT INTO `pv_searchwords` VALUES (160,'硫黄化合物',49);
+INSERT INTO `pv_searchwords` VALUES (161,'温度',50);
+INSERT INTO `pv_searchwords` VALUES (162,'寒',50);
+INSERT INTO `pv_searchwords` VALUES (163,'暑',50);
+INSERT INTO `pv_searchwords` VALUES (164,'輻射',50);
+INSERT INTO `pv_searchwords` VALUES (165,'赤外',50);
+INSERT INTO `pv_searchwords` VALUES (166,'冷',50);
+INSERT INTO `pv_searchwords` VALUES (167,'気候',50);
+INSERT INTO `pv_searchwords` VALUES (168,'水',51);
+INSERT INTO `pv_searchwords` VALUES (169,'water',51);
+INSERT INTO `pv_searchwords` VALUES (170,'超イオン',51);
+INSERT INTO `pv_searchwords` VALUES (171,'H2O',51);
+INSERT INTO `pv_searchwords` VALUES (172,'リング',4);
+INSERT INTO `pv_searchwords` VALUES (173,'環',4);
+INSERT INTO `pv_searchwords` VALUES (174,'ゴッサマー',4);
+INSERT INTO `pv_searchwords` VALUES (175,'ハロー',4);
+INSERT INTO `pv_searchwords` VALUES (176,'メイン',4);
+INSERT INTO `pv_searchwords` VALUES (177,'Gossamer',4);
+INSERT INTO `pv_searchwords` VALUES (178,'Halo',4);
+INSERT INTO `pv_searchwords` VALUES (179,'Main',4);
+INSERT INTO `pv_searchwords` VALUES (180,'ring',4);
+INSERT INTO `pv_searchwords` VALUES (181,'小惑星',52);
+INSERT INTO `pv_searchwords` VALUES (182,'散乱',52);
+INSERT INTO `pv_searchwords` VALUES (183,'摂動',52);
+INSERT INTO `pv_searchwords` VALUES (184,'天気',53);
+INSERT INTO `pv_searchwords` VALUES (185,'雨',53);
+INSERT INTO `pv_searchwords` VALUES (186,'沈殿',53);
+INSERT INTO `pv_searchwords` VALUES (187,'ネオン',53);
+INSERT INTO `pv_searchwords` VALUES (188,'滴',53);
 /*!40000 ALTER TABLE `pv_searchwords` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,7 +302,7 @@ CREATE TABLE `pv_values` (
   `pvv_scene_id` int(11) NOT NULL,
   PRIMARY KEY (`pvv_id`),
   KEY `pvv_value` (`pvv_value`)
-) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -195,13 +318,12 @@ INSERT INTO `pv_values` VALUES (4,1028,'1_46','木星は%1しましま%2がき�
 INSERT INTO `pv_values` VALUES (5,1056,'1_9','木星はほとんど%1水素でできている%2と言えたわ',2,3);
 INSERT INTO `pv_values` VALUES (6,1088,'1_10','木星にはとても%1強い磁場%2があったのよ',2,4);
 INSERT INTO `pv_values` VALUES (7,1040,'1_8','木星には%1衛星%2がいくつもあったの',2,2);
-INSERT INTO `pv_values` VALUES (54,-2,'1_18','木星には%1衛星%2がいくつもあったの',2,2);
 INSERT INTO `pv_values` VALUES (8,1152,'1_11','えっ……そんなこと言われたら、データが消えちゃいそうですよぉ',2,999999);
 INSERT INTO `pv_values` VALUES (9,1026,'1_5','木星は%1しましま%2がきれいだったの',2,1);
 INSERT INTO `pv_values` VALUES (10,-2,'1_13','木星は太陽から平均で7億8千万キロメートル、地球からは6億3千万キロメートル離れているのよ。',2,999999);
 INSERT INTO `pv_values` VALUES (11,-2,'1_14','軌道のだ円度合いを表す離心率、木星は0.048なの。',2,999999);
 INSERT INTO `pv_values` VALUES (12,-2,'1_15','木星には生命は存在しないと考えられているけど、木星の衛星エウロパには地下に海があると考えられていて、生命がいる可能性があると言われているわ。気になるわね！',2,999999);
-INSERT INTO `pv_values` VALUES (13,-2,'1_57','大きさ（半径・直径）：半径はおよそ70,000km、直径は140,000kmよ。地球と比べて大体１０倍程度大きいことになるの。ふふっ。',2,999999);
+INSERT INTO `pv_values` VALUES (13,-2,'1_57','半径はおよそ70,000km、直径は140,000kmよ。地球と比べて大体１０倍程度大きいことになるの。ふふっ。',2,999999);
 INSERT INTO `pv_values` VALUES (14,-2,'1_19','質量は地球のおよそ318倍、太陽系の惑星で２番目に大きい土星と比べて3.3倍程度重いと見積もられているのよ。',2,999999);
 INSERT INTO `pv_values` VALUES (15,-2,'1_20','木星の平均密度は1.326g/cc、地球の平均密度は5.5g/ccなので、地球とは明らかに異なる組成であることが分かると思うわ。',2,999999);
 INSERT INTO `pv_values` VALUES (16,-2,'1_21','ある決まった体積だけで考えると、木星は地球よりも（平均で）軽いことが分かるわ。けれど木星全体の質量は、太陽系のほかの惑星全てを合わせた質量よりも２倍以上重い計算になるの。木星がとてつもなく巨大であることが分かるわね。',2,999999);
@@ -228,21 +350,24 @@ INSERT INTO `pv_values` VALUES (36,-2,'1_39','そう言えばここに来る途�
 INSERT INTO `pv_values` VALUES (37,-2,'1_40','Jupiterは木星の英語名よ！',2,999999);
 INSERT INTO `pv_values` VALUES (38,-2,'1_54','木星はガス惑星って呼ばれる惑星の仲間なの。となりの土星も同じガス惑星よ。',2,999999);
 INSERT INTO `pv_values` VALUES (39,-2,'1_41','木星は昔太陽の周りを回っていたガス円盤から直接できたっていう説のことかしら？木星に固体がどれくらい入っているかがわかるとその説が正しいかどうかがわかると言われてるの。もうひとつ、コア形成モデルと呼ばれる説があるわよ。',2,999999);
-INSERT INTO `pv_values` VALUES (40,-2,'1_42','木星の中心にはコアと呼ばれる核があると考えられているけど、コアの大きさは核なしから地球の質量の８倍までの可能性があって、まだはっきり決まっていないの。中心の温度はおよそ数万度、圧力は地球表面の数兆倍もあるのよ。',2,999999);
+INSERT INTO `pv_values` VALUES (40,-2,'1_42','木星の中心にはコアと呼ばれる核があると考えられているけど、コアの大きさは核なしから地球の質量の８倍までの可能性があって、まだはっきり決まっていないの。',2,999999);
 INSERT INTO `pv_values` VALUES (41,-2,'1_43','木星の内部は岩石コア(主に鉄とシリケイト)と氷層(氷マントル)、その外側に水素とヘリウムからなるガス層があるような三層の玉ねぎ構造と言われているわ。内部の情報は探査機の観測(惑星の重力場)から推定されているの。',2,999999);
-INSERT INTO `pv_values` VALUES (42,-2,'1_44','地球の3倍程度の大きさがあるとされる赤い渦模様。正体は高気圧性の嵐で、反時計周りに約6日で一回転しているのよ。',2,999999);
+INSERT INTO `pv_values` VALUES (42,-2,'1_44','木星には%1大きな渦%2があるのよ。',2,8);
 INSERT INTO `pv_values` VALUES (43,-2,'1_45','南半球にあった白い斑点同士が合体した後、赤斑へと変化したのよ。',2,999999);
 INSERT INTO `pv_values` VALUES (44,-2,'1_47','木星には3種類の雲があって、上からアンモニア、硫酸アンモニウム、水氷の雲があるとされているわ。こうした雲の中は、雷や激しい嵐が起きていると推測されるのよ。',2,999999);
 INSERT INTO `pv_values` VALUES (45,-2,'1_48','大気上層にはアンモニアや硫化水素が存在するとされているので、においを嗅ぐことが出来れば、卵の腐った臭いやアンモニア臭がするそうよ。あまり良い香りではないわね。',2,999999);
-INSERT INTO `pv_values` VALUES (46,-2,'1_49','木星の表面は、美しい白色、黄色、赤色、橙色ととてもカラフルな縞模様で彩られているわ。こうした色合の理由はまだ、よく分かっていないのだけど、白色は雲、赤・橙・黄色は上昇流で運ばれて来た硫黄化合物やリンが原因ではないかと言われているわ。きれいね。',2,999999);
+INSERT INTO `pv_values` VALUES (46,-2,'1_49','木星って%1カラフル%2よね。',2,9);
 INSERT INTO `pv_values` VALUES (47,-2,'1_50','木星は太陽から遠く離れた極寒の地にいるため、表面の温度はおよそ -150度よ。そうした冷たい木星から近赤外線が強く放射されているの。一方で、木星内部は高温(最大で数万度)にあって、温かいお茶の中のような対流運動で熱が表面まで運ばれているの。',2,999999);
-INSERT INTO `pv_values` VALUES (48,-2,'1_51','木星の内部にも水氷が存在するけど、この氷は地上の氷とは異なるのよ。木星の内部は高温且つ超高圧の環境下にあるため、中心付近ではプラズマ状態になっているの。また、海王星や天王星のような氷惑星でも、固体と液体の両方の性質を持つ超イオン流体のような特殊状態になっていたりするわ。',2,999999);
-INSERT INTO `pv_values` VALUES (49,-2,'1_4','木星にも内側からハロー(Halo)、メイン(Main)、ゴッサマー(Gossamer)リングと呼ばれる3つのリングがあるわ。わたしが発見したのよ！最も外側のリングは、衛星アマルテアおよびテーベからの物質から構成されていると考えられていて、それぞれアマルテアゴッサマーリング、テーベゴッサマーリングと呼ばれているの。',2,999999);
+INSERT INTO `pv_values` VALUES (48,-2,'1_51','木星の内部にも水氷が存在するけど、この氷は地上の氷とは異なるのよ。木星の内部は高温且つ超高圧の環境下にあるため、中心付近ではプラズマ状態になっているの。',2,999999);
+INSERT INTO `pv_values` VALUES (49,-2,'1_4','木星にも%1リングがある%2のよ。わたしが見つけたの！',2,10);
 INSERT INTO `pv_values` VALUES (50,-2,'1_52','木星の強い重力の影響で、小惑星帯と呼ばれる火星と木星の間にある領域にあった多くの小惑星は、遠く跳ね飛ばされた可能性があるの。一方で、地球にやってくる小惑星の軌道を曲げてくれて、地球に衝突するのを防いでくれていることもあるのよ。',2,999999);
-INSERT INTO `pv_values` VALUES (51,-2,'1_53','木星の内部ではヘリウムの滴が雨として降っているわ。このヘリウムの滴には街角の店頭の明かり「ネオンサイン」で有名なネオンも溶けていると言われているの。また、大気上層には雲もあって、そこでも雨が降っている可能性があるのよ。
-',2,999999);
+INSERT INTO `pv_values` VALUES (51,-2,'1_53','木星の内部ではヘリウムの滴が雨として降っているわ。このヘリウムの滴には街角の店頭の明かり「ネオンサイン」で有名なネオンも溶けていると言われているの。また、大気上層には雲もあって、そこでも雨が降っている可能性があるのよ。',2,999999);
 INSERT INTO `pv_values` VALUES (52,-2,'1_58','木星は%1形成後に数億年間移動%2したらしいわ',2,5);
-INSERT INTO `pv_values` VALUES (53,-2,'1_59','木星にはとても%1強い磁場%2があったのよ',2,6);
+INSERT INTO `pv_values` VALUES (53,-2,'1_59','木星系の%1軌道%2は特別なんだって。',2,6);
+INSERT INTO `pv_values` VALUES (54,-2,'1_60','木星には%1オーロラ%2がたくさん見られるのよ。',2,7);
+INSERT INTO `pv_values` VALUES (55,-2,'1_18','木星には%1衛星%2がいくつもあったの',2,2);
+INSERT INTO `pv_values` VALUES (56,-2,'1_61','中心の温度はおよそ数万度、圧力は地球表面の数兆倍もあるのよ。',2,999999);
+INSERT INTO `pv_values` VALUES (57,-2,'1_30_51','木星のほとんどは水素とヘリウムでできているのよ。',2,999999);
 /*!40000 ALTER TABLE `pv_values` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -258,7 +383,7 @@ CREATE TABLE `pv_words` (
   `pvw_word` varchar(20) COLLATE utf8_unicode_ci NOT NULL COMMENT '正確なワード',
   `pvw_type` int(10) unsigned NOT NULL COMMENT 'ワードの種類。pv_typeテーブル参照',
   PRIMARY KEY (`pvw_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=60 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -326,6 +451,8 @@ INSERT INTO `pv_words` VALUES (56,'双極子',2);
 INSERT INTO `pv_words` VALUES (57,'半径・直径',2);
 INSERT INTO `pv_words` VALUES (58,'軌道変化',2);
 INSERT INTO `pv_words` VALUES (59,'共鳴運動',2);
+INSERT INTO `pv_words` VALUES (60,'オーロラ',2);
+INSERT INTO `pv_words` VALUES (61,'中心',2);
 /*!40000 ALTER TABLE `pv_words` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
