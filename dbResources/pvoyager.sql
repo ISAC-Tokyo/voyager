@@ -61,7 +61,7 @@ CREATE TABLE `pv_searchwords` (
   `pvs_word_id` int(11) DEFAULT NULL COMMENT '結果単語',
   PRIMARY KEY (`pvs_id`),
   KEY `pvs_sword` (`pvs_sword`)
-) ENGINE=MyISAM AUTO_INCREMENT=194 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=195 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -263,6 +263,7 @@ INSERT INTO `pv_searchwords` VALUES (190,'一人',63);
 INSERT INTO `pv_searchwords` VALUES (191,'１人',63);
 INSERT INTO `pv_searchwords` VALUES (192,'彼氏',64);
 INSERT INTO `pv_searchwords` VALUES (193,'好き',65);
+INSERT INTO `pv_searchwords` VALUES (194,'軌道',59);
 /*!40000 ALTER TABLE `pv_searchwords` ENABLE KEYS */;
 UNLOCK TABLES;
 
