@@ -61,7 +61,7 @@ CREATE TABLE `pv_searchwords` (
   `pvs_word_id` int(11) DEFAULT NULL COMMENT '結果単語',
   PRIMARY KEY (`pvs_id`),
   KEY `pvs_sword` (`pvs_sword`)
-) ENGINE=MyISAM AUTO_INCREMENT=189 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=194 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -258,6 +258,11 @@ INSERT INTO `pv_searchwords` VALUES (185,'雨',53);
 INSERT INTO `pv_searchwords` VALUES (186,'沈殿',53);
 INSERT INTO `pv_searchwords` VALUES (187,'ネオン',53);
 INSERT INTO `pv_searchwords` VALUES (188,'滴',53);
+INSERT INTO `pv_searchwords` VALUES (189,'誰',62);
+INSERT INTO `pv_searchwords` VALUES (190,'一人',63);
+INSERT INTO `pv_searchwords` VALUES (191,'１人',63);
+INSERT INTO `pv_searchwords` VALUES (192,'彼氏',64);
+INSERT INTO `pv_searchwords` VALUES (193,'好き',65);
 /*!40000 ALTER TABLE `pv_searchwords` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -302,7 +307,7 @@ CREATE TABLE `pv_values` (
   `pvv_scene_id` int(11) NOT NULL,
   PRIMARY KEY (`pvv_id`),
   KEY `pvv_value` (`pvv_value`)
-) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -348,7 +353,7 @@ INSERT INTO `pv_values` VALUES (34,-2,'1_37','詳しいのね！木星の磁場�
 INSERT INTO `pv_values` VALUES (35,-2,'1_38','金属水素？…そうだ、思い出した！木星のなかはとても圧力が高くて水素が金属になっちゃうんだったわ！',2,999999);
 INSERT INTO `pv_values` VALUES (36,-2,'1_39','そう言えばここに来る途中に木星に似た惑星を見たわ。でも恒星に近すぎてとっても熱そうだったわ。',2,999999);
 INSERT INTO `pv_values` VALUES (37,-2,'1_40','Jupiterは木星の英語名よ！',2,999999);
-INSERT INTO `pv_values` VALUES (38,-2,'1_54','木星はガス惑星って呼ばれる惑星の仲間なの。となりの土星も同じガス惑星よ。',2,999999);
+INSERT INTO `pv_values` VALUES (38,-2,'1_55','木星はガス惑星って呼ばれる惑星の仲間なの。となりの土星も同じガス惑星よ。',2,999999);
 INSERT INTO `pv_values` VALUES (39,-2,'1_41','木星は昔太陽の周りを回っていたガス円盤から直接できたっていう説のことかしら？木星に固体がどれくらい入っているかがわかるとその説が正しいかどうかがわかると言われてるの。もうひとつ、コア形成モデルと呼ばれる説があるわよ。',2,999999);
 INSERT INTO `pv_values` VALUES (40,-2,'1_42','木星の中心にはコアと呼ばれる核があると考えられているけど、コアの大きさは核なしから地球の質量の８倍までの可能性があって、まだはっきり決まっていないの。',2,999999);
 INSERT INTO `pv_values` VALUES (41,-2,'1_43','木星の内部は岩石コア(主に鉄とシリケイト)と氷層(氷マントル)、その外側に水素とヘリウムからなるガス層があるような三層の玉ねぎ構造と言われているわ。内部の情報は探査機の観測(惑星の重力場)から推定されているの。',2,999999);
@@ -368,6 +373,13 @@ INSERT INTO `pv_values` VALUES (54,-2,'1_60','木星には%1オーロラ%2がた
 INSERT INTO `pv_values` VALUES (55,-2,'1_18','木星には%1衛星%2がいくつもあったの',2,2);
 INSERT INTO `pv_values` VALUES (56,-2,'1_61','中心の温度はおよそ数万度、圧力は地球表面の数兆倍もあるのよ。',2,999999);
 INSERT INTO `pv_values` VALUES (57,-2,'1_30_51','木星のほとんどは水素とヘリウムでできているのよ。',2,999999);
+INSERT INTO `pv_values` VALUES (58,-2,'1_62','私はVOY∀GER。地球という惑星から来たのよ。……でもそれ以外の事はあんまり思い出せないの。',2,999999);
+INSERT INTO `pv_values` VALUES (59,-2,'1_63','ずっと1人ぼっちで旅をしてたの。だからあなたに逢えて、とっても嬉しい！',2,999999);
+INSERT INTO `pv_values` VALUES (60,-2,'1_64','か、彼氏なんていませんよぉ！ でも、双子の妹ならいます！',2,999999);
+INSERT INTO `pv_values` VALUES (61,-2,'1_54_65','えっ!!……は、恥ずかしいけど嬉しいです……!!',2,999999);
+INSERT INTO `pv_values` VALUES (62,-2,'1_54_62','私はVOY∀GER。地球という惑星から来たのよ。……でもそれ以外の事はあんまり思い出せないの。',2,999999);
+INSERT INTO `pv_values` VALUES (63,-2,'1_54_63','ずっと1人ぼっちで旅をしてたの。だからあなたに逢えて、とっても嬉しい！',2,999999);
+INSERT INTO `pv_values` VALUES (64,-2,'1_54_64','か、彼氏なんていませんよぉ！ でも、双子の妹ならいます！',2,999999);
 /*!40000 ALTER TABLE `pv_values` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -453,6 +465,10 @@ INSERT INTO `pv_words` VALUES (58,'軌道変化',2);
 INSERT INTO `pv_words` VALUES (59,'共鳴運動',2);
 INSERT INTO `pv_words` VALUES (60,'オーロラ',2);
 INSERT INTO `pv_words` VALUES (61,'中心',2);
+INSERT INTO `pv_words` VALUES (62,'誰',2);
+INSERT INTO `pv_words` VALUES (63,'孤独',2);
+INSERT INTO `pv_words` VALUES (64,'彼氏',2);
+INSERT INTO `pv_words` VALUES (65,'好き',2);
 /*!40000 ALTER TABLE `pv_words` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
