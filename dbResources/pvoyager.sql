@@ -89,7 +89,7 @@ INSERT INTO `pv_searchwords` VALUES (21,'moon',8);
 INSERT INTO `pv_searchwords` VALUES (22,'かわいい',11);
 INSERT INTO `pv_searchwords` VALUES (23,'可愛い',11);
 INSERT INTO `pv_searchwords` VALUES (24,'カワイイ',11);
-INSERT INTO `pv_searchwords` VALUES (25,'イオ',8);
+INSERT INTO `pv_searchwords` VALUES (25,'イオ',18);
 INSERT INTO `pv_searchwords` VALUES (26,'タイタン',12);
 INSERT INTO `pv_searchwords` VALUES (27,'おおきさ',6);
 INSERT INTO `pv_searchwords` VALUES (28,'模様',5);
@@ -100,6 +100,41 @@ INSERT INTO `pv_searchwords` VALUES (32,'目玉',7);
 INSERT INTO `pv_searchwords` VALUES (33,'大赤はん',7);
 INSERT INTO `pv_searchwords` VALUES (34,'大赤斑',7);
 INSERT INTO `pv_searchwords` VALUES (35,'渦',7);
+INSERT INTO `pv_searchwords` VALUES (36,'距離',13);
+INSERT INTO `pv_searchwords` VALUES (37,'場所',13);
+INSERT INTO `pv_searchwords` VALUES (38,'どこに',13);
+INSERT INTO `pv_searchwords` VALUES (39,'位置',13);
+INSERT INTO `pv_searchwords` VALUES (40,'軌道長半径',13);
+INSERT INTO `pv_searchwords` VALUES (41,'離心率',14);
+INSERT INTO `pv_searchwords` VALUES (42,'生命',15);
+INSERT INTO `pv_searchwords` VALUES (43,'生き物',15);
+INSERT INTO `pv_searchwords` VALUES (44,'いきもの',15);
+INSERT INTO `pv_searchwords` VALUES (45,'移動',58);
+INSERT INTO `pv_searchwords` VALUES (46,'ニース',58);
+INSERT INTO `pv_searchwords` VALUES (47,'Nice',58);
+INSERT INTO `pv_searchwords` VALUES (48,'Grand Tack',58);
+INSERT INTO `pv_searchwords` VALUES (49,'ギャップ',58);
+INSERT INTO `pv_searchwords` VALUES (50,'空隙',58);
+INSERT INTO `pv_searchwords` VALUES (51,'溝',58);
+INSERT INTO `pv_searchwords` VALUES (52,'後期重爆撃',58);
+INSERT INTO `pv_searchwords` VALUES (53,'隕石',58);
+INSERT INTO `pv_searchwords` VALUES (54,'タイプII',58);
+INSERT INTO `pv_searchwords` VALUES (55,'タイプ2',58);
+INSERT INTO `pv_searchwords` VALUES (56,'TypeII',58);
+INSERT INTO `pv_searchwords` VALUES (57,'Type2',58);
+INSERT INTO `pv_searchwords` VALUES (58,'共鳴',59);
+INSERT INTO `pv_searchwords` VALUES (59,'平均運動',59);
+INSERT INTO `pv_searchwords` VALUES (60,'5:2',59);
+INSERT INTO `pv_searchwords` VALUES (61,'Laplace',59);
+INSERT INTO `pv_searchwords` VALUES (62,'ラプラス',59);
+INSERT INTO `pv_searchwords` VALUES (63,'ガリレオ衛星',18);
+INSERT INTO `pv_searchwords` VALUES (64,'カリスト',18);
+INSERT INTO `pv_searchwords` VALUES (65,'エウロパ',18);
+INSERT INTO `pv_searchwords` VALUES (66,'ガニメデ',18);
+INSERT INTO `pv_searchwords` VALUES (67,'分化',18);
+INSERT INTO `pv_searchwords` VALUES (68,'ガリレオ・ガリレイ',18);
+
+
 /*!40000 ALTER TABLE `pv_searchwords` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -138,12 +173,13 @@ DROP TABLE IF EXISTS `pv_values`;
 CREATE TABLE `pv_values` (
   `pvv_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `pvv_value` bigint(20) NOT NULL COMMENT 'key',
+  `pvv_word_ids` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `pvv_result` text COLLATE utf8_unicode_ci NOT NULL COMMENT 'voyagerの返事',
   `pvv_sex` int(11) DEFAULT NULL COMMENT '性別, 1=male, 2=female',
   `pvv_scene_id` int(11) NOT NULL,
   PRIMARY KEY (`pvv_id`),
   KEY `pvv_value` (`pvv_value`)
-) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,58 +188,61 @@ CREATE TABLE `pv_values` (
 
 LOCK TABLES `pv_values` WRITE;
 /*!40000 ALTER TABLE `pv_values` DISABLE KEYS */;
-INSERT INTO `pv_values` VALUES (1,-1,'えっ、どこのこと？もう一回言ってみて',2,0);
-INSERT INTO `pv_values` VALUES (2,0,'何も思い浮かばないの...もう一回言ってみて',2,0);
-INSERT INTO `pv_values` VALUES (3,1032,'木星はとっても%1大きかった%2わ',2,3);
-INSERT INTO `pv_values` VALUES (4,1028,'木星は%1しましま%2がきれいだったの',2,1);
-INSERT INTO `pv_values` VALUES (5,1056,'木星はほとんど%1水素でできている%2と言えたわ',2,3);
-INSERT INTO `pv_values` VALUES (6,1088,'木星にはとても%1強い磁場%2があったのよ',2,4);
-INSERT INTO `pv_values` VALUES (7,1040,'木星には%1衛星%2がいくつもあったの',2,2);
-INSERT INTO `pv_values` VALUES (8,1152,'えっ……そんなこと言われたら、データが消えちゃいそうですよぉ',2,999999);
-INSERT INTO `pv_values` VALUES (9,1026,'木星は%1しましま%2がきれいだったの',2,1);
-INSERT INTO `pv_values` VALUES (10,-2,'木星は太陽から平均で7億8千万キロメートル、地球からは6億3千万キロメートル離れているのよ。',2,999999);
-INSERT INTO `pv_values` VALUES (11,-2,'軌道のだ円度合いを表す離心率、木星は0.048なの。',2,999999);
-INSERT INTO `pv_values` VALUES (12,-2,'木星には生命は存在しないと考えられているけど、木星の衛星エウロパには地下に海があると考えられていて、生命がいる可能性があると言われているわ。気になるわね！',2,999999);
-INSERT INTO `pv_values` VALUES (13,-2,'大きさ（半径・直径）：半径はおよそ70,000km、直径は140,000kmよ。地球と比べて大体１０倍程度大きいことになるの。ふふっ。',2,999999);
-INSERT INTO `pv_values` VALUES (14,-2,'質量は地球のおよそ318倍、太陽系の惑星で２番目に大きい土星と比べて3.3倍程度重いと見積もられているのよ。',2,999999);
-INSERT INTO `pv_values` VALUES (15,-2,'木星の平均密度は1.326g/cc、地球の平均密度は5.5g/ccなので、地球とは明らかに異なる組成であることが分かると思うわ。',2,999999);
-INSERT INTO `pv_values` VALUES (16,-2,'ある決まった体積だけで考えると、木星は地球よりも（平均で）軽いことが分かるわ。けれど木星全体の質量は、太陽系のほかの惑星全てを合わせた質量よりも２倍以上重い計算になるの。木星がとてつもなく巨大であることが分かるわね。',2,999999);
-INSERT INTO `pv_values` VALUES (17,-2,'木星は、中心から赤道までの半径のほうが、極までの半径よりも6.5%ほど大きいことが分かっているの。なんと地球の20倍の扁平率なのよ。',2,999999);
-INSERT INTO `pv_values` VALUES (18,-2,'木星は、まず始めに固体（岩石・氷）が集まり、地球の数倍程度重くなったところで、それがコア（核）となって周囲のガスを急速に取り込んで現在の姿になったと考えられているの。でも、コアがどの程度重くなればガスを取り込めるのか、明確には分かっていないわ。',2,999999);
-INSERT INTO `pv_values` VALUES (19,-2,'木星の公転周期（太陽を一周まわる長さ）は12年程度よ。でも自転の周期はなんと10時間！すさまじい速さで自転しているわ。木星の扁平率が大きいのはそのためなの。',2,999999);
-INSERT INTO `pv_values` VALUES (20,-2,'強い磁場に捉えられた荷電粒子は、強い電波を発するわ。地球からは木星の自転に合わせて、その強い電波放射が観測されているの。',2,999999);
-INSERT INTO `pv_values` VALUES (21,-2,'強烈な風によって大気の層ごとに摩擦が起こるので、巨大な雷が観測されているわ。',2,999999);
-INSERT INTO `pv_values` VALUES (22,-2,'これまでに数々の探査機が木星に送り込まれているの。わたしもね！',2,999999);
-INSERT INTO `pv_values` VALUES (23,-2,'木星はほとんどガスでできているのよ。',2,999999);
-INSERT INTO `pv_values` VALUES (24,-2,'木星の主成分は水素とヘリウムのガスよ。',2,999999);
-INSERT INTO `pv_values` VALUES (25,-2,'木星のほとんどは水素とヘリウムでできているのよ。',2,999999);
-INSERT INTO `pv_values` VALUES (26,-2,'木星は空気でできているわ。でも地球の空気とは成分が全然ちがうの。',2,999999);
-INSERT INTO `pv_values` VALUES (27,-2,'木星の大気はとっても分厚くて、どこまで続いているかはまだよくわかっていないの。',2,999999);
-INSERT INTO `pv_values` VALUES (28,-2,'木星の希ガスはちょっとだけ太陽より多いみたい。',2,999999);
-INSERT INTO `pv_values` VALUES (29,-2,'木星のエンベロープは水素でできている部分のことよ。',2,999999);
-INSERT INTO `pv_values` VALUES (30,-2,'木星は太陽より数百万年ぐらい若いって言われてるわ。それでもまだ45億歳なのよ。',2,999999);
-INSERT INTO `pv_values` VALUES (31,-2,'木星は太陽より数百万年ぐらい若いって言われてるわ。それでもまだ45億歳なのよ。…わたしの歳は秘密よ。',2,999999);
-INSERT INTO `pv_values` VALUES (32,-2,'木星は昔とても熱かったけど、だんだん冷えながら縮んでいったらしいの',2,999999);
-INSERT INTO `pv_values` VALUES (33,-2,'木星には双極子型の強力な磁場があるのよ。',2,999999);
-INSERT INTO `pv_values` VALUES (34,-2,'詳しいのね！木星の磁場はそのダイナモ作用で作られていると言われているわ。',2,999999);
-INSERT INTO `pv_values` VALUES (35,-2,'金属水素？…そうだ、思い出した！木星のなかはとても圧力が高くて水素が金属になっちゃうんだったわ！',2,999999);
-INSERT INTO `pv_values` VALUES (36,-2,'そう言えばここに来る途中に木星に似た惑星を見たわ。でも恒星に近すぎてとっても熱そうだったわ。',2,999999);
-INSERT INTO `pv_values` VALUES (37,-2,'Jupiterは木星の英語名よ！',2,999999);
-INSERT INTO `pv_values` VALUES (38,-2,'木星はガス惑星って呼ばれる惑星の仲間なの。となりの土星も同じガス惑星よ。',2,999999);
-INSERT INTO `pv_values` VALUES (39,-2,'木星は昔太陽の周りを回っていたガス円盤から直接できたっていう説のことかしら？木星に固体がどれくらい入っているかがわかるとその説が正しいかどうかがわかると言われてるの。もうひとつ、コア形成モデルと呼ばれる説があるわよ。',2,999999);
-INSERT INTO `pv_values` VALUES (40,-2,'木星の中心にはコアと呼ばれる核があると考えられているけど、コアの大きさは核なしから地球の質量の８倍までの可能性があって、まだはっきり決まっていないの。中心の温度はおよそ数万度、圧力は地球表面の数兆倍もあるのよ。',2,999999);
-INSERT INTO `pv_values` VALUES (41,-2,'木星の内部は岩石コア(主に鉄とシリケイト)と氷層(氷マントル)、その外側に水素とヘリウムからなるガス層があるような三層の玉ねぎ構造と言われているわ。内部の情報は探査機の観測(惑星の重力場)から推定されているの。',2,999999);
-INSERT INTO `pv_values` VALUES (42,-2,'地球の3倍程度の大きさがあるとされる赤い渦模様。正体は高気圧性の嵐で、反時計周りに約6日で一回転しているのよ。',2,999999);
-INSERT INTO `pv_values` VALUES (43,-2,'南半球にあった白い斑点同士が合体した後、赤斑へと変化したのよ。',2,999999);
-INSERT INTO `pv_values` VALUES (44,-2,'木星には3種類の雲があって、上からアンモニア、硫酸アンモニウム、水氷の雲があるとされているわ。こうした雲の中は、雷や激しい嵐が起きていると推測されるのよ。',2,999999);
-INSERT INTO `pv_values` VALUES (45,-2,'大気上層にはアンモニアや硫化水素が存在するとされているので、においを嗅ぐことが出来れば、卵の腐った臭いやアンモニア臭がするそうよ。あまり良い香りではないわね。',2,999999);
-INSERT INTO `pv_values` VALUES (46,-2,'木星の表面は、美しい白色、黄色、赤色、橙色ととてもカラフルな縞模様で彩られているわ。こうした色合の理由はまだ、よく分かっていないのだけど、白色は雲、赤・橙・黄色は上昇流で運ばれて来た硫黄化合物やリンが原因ではないかと言われているわ。きれいね。',2,999999);
-INSERT INTO `pv_values` VALUES (47,-2,'木星は太陽から遠く離れた極寒の地にいるため、表面の温度はおよそ -150度よ。そうした冷たい木星から近赤外線が強く放射されているの。一方で、木星内部は高温(最大で数万度)にあって、温かいお茶の中のような対流運動で熱が表面まで運ばれているの。',2,999999);
-INSERT INTO `pv_values` VALUES (48,-2,'木星の内部にも水氷が存在するけど、この氷は地上の氷とは異なるのよ。木星の内部は高温且つ超高圧の環境下にあるため、中心付近ではプラズマ状態になっているの。また、海王星や天王星のような氷惑星でも、固体と液体の両方の性質を持つ超イオン流体のような特殊状態になっていたりするわ。',2,999999);
-INSERT INTO `pv_values` VALUES (49,-2,'木星にも内側からハロー(Halo)、メイン(Main)、ゴッサマー(Gossamer)リングと呼ばれる3つのリングがあるわ。わたしが発見したのよ！最も外側のリングは、衛星アマルテアおよびテーベからの物質から構成されていると考えられていて、それぞれアマルテアゴッサマーリング、テーベゴッサマーリングと呼ばれているの。',2,999999);
-INSERT INTO `pv_values` VALUES (50,-2,'木星の強い重力の影響で、小惑星帯と呼ばれる火星と木星の間にある領域にあった多くの小惑星は、遠く跳ね飛ばされた可能性があるの。一方で、地球にやってくる小惑星の軌道を曲げてくれて、地球に衝突するのを防いでくれていることもあるのよ。',2,999999);
-INSERT INTO `pv_values` VALUES (51,-2,'木星の内部ではヘリウムの滴が雨として降っているわ。このヘリウムの滴には街角の店頭の明かり「ネオンサイン」で有名なネオンも溶けていると言われているの。また、大気上層には雲もあって、そこでも雨が降っている可能性があるのよ。
+INSERT INTO `pv_values` VALUES (1,-1,'-1','えっ、どこのこと？もう一回言ってみて',2,0);
+INSERT INTO `pv_values` VALUES (2,0,'0','何も思い浮かばないの...もう一回言ってみて',2,0);
+INSERT INTO `pv_values` VALUES (3,1032,'1_6','木星はとっても%1大きかった%2わ',2,3);
+INSERT INTO `pv_values` VALUES (4,1028,'1_46','木星は%1しましま%2がきれいだったの',2,1);
+INSERT INTO `pv_values` VALUES (5,1056,'1_9','木星はほとんど%1水素でできている%2と言えたわ',2,3);
+INSERT INTO `pv_values` VALUES (6,1088,'1_10','木星にはとても%1強い磁場%2があったのよ',2,4);
+INSERT INTO `pv_values` VALUES (7,1040,'1_8','木星には%1衛星%2がいくつもあったの',2,2);
+INSERT INTO `pv_values` VALUES (54,-2,'1_18','木星には%1衛星%2がいくつもあったの',2,2);
+INSERT INTO `pv_values` VALUES (8,1152,'1_11','えっ……そんなこと言われたら、データが消えちゃいそうですよぉ',2,999999);
+INSERT INTO `pv_values` VALUES (9,1026,'1_5','木星は%1しましま%2がきれいだったの',2,1);
+INSERT INTO `pv_values` VALUES (10,-2,'1_13','木星は太陽から平均で7億8千万キロメートル、地球からは6億3千万キロメートル離れているのよ。',2,999999);
+INSERT INTO `pv_values` VALUES (11,-2,'1_14','軌道のだ円度合いを表す離心率、木星は0.048なの。',2,999999);
+INSERT INTO `pv_values` VALUES (12,-2,'1_15','木星には生命は存在しないと考えられているけど、木星の衛星エウロパには地下に海があると考えられていて、生命がいる可能性があると言われているわ。気になるわね！',2,999999);
+INSERT INTO `pv_values` VALUES (13,-2,'1_57','大きさ（半径・直径）：半径はおよそ70,000km、直径は140,000kmよ。地球と比べて大体１０倍程度大きいことになるの。ふふっ。',2,999999);
+INSERT INTO `pv_values` VALUES (14,-2,'1_19','質量は地球のおよそ318倍、太陽系の惑星で２番目に大きい土星と比べて3.3倍程度重いと見積もられているのよ。',2,999999);
+INSERT INTO `pv_values` VALUES (15,-2,'1_20','木星の平均密度は1.326g/cc、地球の平均密度は5.5g/ccなので、地球とは明らかに異なる組成であることが分かると思うわ。',2,999999);
+INSERT INTO `pv_values` VALUES (16,-2,'1_21','ある決まった体積だけで考えると、木星は地球よりも（平均で）軽いことが分かるわ。けれど木星全体の質量は、太陽系のほかの惑星全てを合わせた質量よりも２倍以上重い計算になるの。木星がとてつもなく巨大であることが分かるわね。',2,999999);
+INSERT INTO `pv_values` VALUES (17,-2,'1_22','木星は、中心から赤道までの半径のほうが、極までの半径よりも6.5%ほど大きいことが分かっているの。なんと地球の20倍の扁平率なのよ。',2,999999);
+INSERT INTO `pv_values` VALUES (18,-2,'1_23','木星は、まず始めに固体（岩石・氷）が集まり、地球の数倍程度重くなったところで、それがコア（核）となって周囲のガスを急速に取り込んで現在の姿になったと考えられているの。でも、コアがどの程度重くなればガスを取り込めるのか、明確には分かっていないわ。',2,999999);
+INSERT INTO `pv_values` VALUES (19,-2,'1_24','木星の公転周期（太陽を一周まわる長さ）は12年程度よ。でも自転の周期はなんと10時間！すさまじい速さで自転しているわ。木星の扁平率が大きいのはそのためなの。',2,999999);
+INSERT INTO `pv_values` VALUES (20,-2,'1_25','強い磁場に捉えられた荷電粒子は、強い電波を発するわ。地球からは木星の自転に合わせて、その強い電波放射が観測されているの。',2,999999);
+INSERT INTO `pv_values` VALUES (21,-2,'1_26','強烈な風によって大気の層ごとに摩擦が起こるので、巨大な雷が観測されているわ。',2,999999);
+INSERT INTO `pv_values` VALUES (22,-2,'1_27','これまでに数々の探査機が木星に送り込まれているの。わたしもね！',2,999999);
+INSERT INTO `pv_values` VALUES (23,-2,'1_28','木星はほとんどガスでできているのよ。',2,999999);
+INSERT INTO `pv_values` VALUES (24,-2,'1_29','木星の主成分は水素とヘリウムのガスよ。',2,999999);
+INSERT INTO `pv_values` VALUES (25,-2,'1_30','木星のほとんどは水素とヘリウムでできているのよ。',2,999999);
+INSERT INTO `pv_values` VALUES (26,-2,'1_31','木星は空気でできているわ。でも地球の空気とは成分が全然ちがうの。',2,999999);
+INSERT INTO `pv_values` VALUES (27,-2,'1_32','木星の大気はとっても分厚くて、どこまで続いているかはまだよくわかっていないの。',2,999999);
+INSERT INTO `pv_values` VALUES (28,-2,'1_33','木星の希ガスはちょっとだけ太陽より多いみたい。',2,999999);
+INSERT INTO `pv_values` VALUES (29,-2,'1_34','木星のエンベロープは水素でできている部分のことよ。',2,999999);
+INSERT INTO `pv_values` VALUES (30,-2,'1_35','木星は太陽より数百万年ぐらい若いって言われてるわ。それでもまだ45億歳なのよ。',2,999999);
+INSERT INTO `pv_values` VALUES (31,-2,'1_35_54','木星は太陽より数百万年ぐらい若いって言われてるわ。それでもまだ45億歳なのよ。…わたしの歳は秘密よ。',2,999999);
+INSERT INTO `pv_values` VALUES (32,-2,'1_36','木星は昔とても熱かったけど、だんだん冷えながら縮んでいったらしいの',2,999999);
+INSERT INTO `pv_values` VALUES (33,-2,'1_56','木星には双極子型の強力な磁場があるのよ。',2,999999);
+INSERT INTO `pv_values` VALUES (34,-2,'1_37','詳しいのね！木星の磁場はそのダイナモ作用で作られていると言われているわ。',2,999999);
+INSERT INTO `pv_values` VALUES (35,-2,'1_38','金属水素？…そうだ、思い出した！木星のなかはとても圧力が高くて水素が金属になっちゃうんだったわ！',2,999999);
+INSERT INTO `pv_values` VALUES (36,-2,'1_39','そう言えばここに来る途中に木星に似た惑星を見たわ。でも恒星に近すぎてとっても熱そうだったわ。',2,999999);
+INSERT INTO `pv_values` VALUES (37,-2,'1_40','Jupiterは木星の英語名よ！',2,999999);
+INSERT INTO `pv_values` VALUES (38,-2,'1_54','木星はガス惑星って呼ばれる惑星の仲間なの。となりの土星も同じガス惑星よ。',2,999999);
+INSERT INTO `pv_values` VALUES (39,-2,'1_41','木星は昔太陽の周りを回っていたガス円盤から直接できたっていう説のことかしら？木星に固体がどれくらい入っているかがわかるとその説が正しいかどうかがわかると言われてるの。もうひとつ、コア形成モデルと呼ばれる説があるわよ。',2,999999);
+INSERT INTO `pv_values` VALUES (40,-2,'1_42','木星の中心にはコアと呼ばれる核があると考えられているけど、コアの大きさは核なしから地球の質量の８倍までの可能性があって、まだはっきり決まっていないの。中心の温度はおよそ数万度、圧力は地球表面の数兆倍もあるのよ。',2,999999);
+INSERT INTO `pv_values` VALUES (41,-2,'1_43','木星の内部は岩石コア(主に鉄とシリケイト)と氷層(氷マントル)、その外側に水素とヘリウムからなるガス層があるような三層の玉ねぎ構造と言われているわ。内部の情報は探査機の観測(惑星の重力場)から推定されているの。',2,999999);
+INSERT INTO `pv_values` VALUES (42,-2,'1_44','地球の3倍程度の大きさがあるとされる赤い渦模様。正体は高気圧性の嵐で、反時計周りに約6日で一回転しているのよ。',2,999999);
+INSERT INTO `pv_values` VALUES (43,-2,'1_45','南半球にあった白い斑点同士が合体した後、赤斑へと変化したのよ。',2,999999);
+INSERT INTO `pv_values` VALUES (44,-2,'1_47','木星には3種類の雲があって、上からアンモニア、硫酸アンモニウム、水氷の雲があるとされているわ。こうした雲の中は、雷や激しい嵐が起きていると推測されるのよ。',2,999999);
+INSERT INTO `pv_values` VALUES (45,-2,'1_48','大気上層にはアンモニアや硫化水素が存在するとされているので、においを嗅ぐことが出来れば、卵の腐った臭いやアンモニア臭がするそうよ。あまり良い香りではないわね。',2,999999);
+INSERT INTO `pv_values` VALUES (46,-2,'1_49','木星の表面は、美しい白色、黄色、赤色、橙色ととてもカラフルな縞模様で彩られているわ。こうした色合の理由はまだ、よく分かっていないのだけど、白色は雲、赤・橙・黄色は上昇流で運ばれて来た硫黄化合物やリンが原因ではないかと言われているわ。きれいね。',2,999999);
+INSERT INTO `pv_values` VALUES (47,-2,'1_50','木星は太陽から遠く離れた極寒の地にいるため、表面の温度はおよそ -150度よ。そうした冷たい木星から近赤外線が強く放射されているの。一方で、木星内部は高温(最大で数万度)にあって、温かいお茶の中のような対流運動で熱が表面まで運ばれているの。',2,999999);
+INSERT INTO `pv_values` VALUES (48,-2,'1_51','木星の内部にも水氷が存在するけど、この氷は地上の氷とは異なるのよ。木星の内部は高温且つ超高圧の環境下にあるため、中心付近ではプラズマ状態になっているの。また、海王星や天王星のような氷惑星でも、固体と液体の両方の性質を持つ超イオン流体のような特殊状態になっていたりするわ。',2,999999);
+INSERT INTO `pv_values` VALUES (49,-2,'1_4','木星にも内側からハロー(Halo)、メイン(Main)、ゴッサマー(Gossamer)リングと呼ばれる3つのリングがあるわ。わたしが発見したのよ！最も外側のリングは、衛星アマルテアおよびテーベからの物質から構成されていると考えられていて、それぞれアマルテアゴッサマーリング、テーベゴッサマーリングと呼ばれているの。',2,999999);
+INSERT INTO `pv_values` VALUES (50,-2,'1_52','木星の強い重力の影響で、小惑星帯と呼ばれる火星と木星の間にある領域にあった多くの小惑星は、遠く跳ね飛ばされた可能性があるの。一方で、地球にやってくる小惑星の軌道を曲げてくれて、地球に衝突するのを防いでくれていることもあるのよ。',2,999999);
+INSERT INTO `pv_values` VALUES (51,-2,'1_53','木星の内部ではヘリウムの滴が雨として降っているわ。このヘリウムの滴には街角の店頭の明かり「ネオンサイン」で有名なネオンも溶けていると言われているの。また、大気上層には雲もあって、そこでも雨が降っている可能性があるのよ。
 ',2,999999);
+INSERT INTO `pv_values` VALUES (52,-2,'1_58','木星は%1形成後に数億年間移動%2したらしいわ',2,5);
+INSERT INTO `pv_values` VALUES (53,-2,'1_59','木星にはとても%1強い磁場%2があったのよ',2,6);
 /*!40000 ALTER TABLE `pv_values` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,10 +257,8 @@ CREATE TABLE `pv_words` (
   `pvw_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `pvw_word` varchar(20) COLLATE utf8_unicode_ci NOT NULL COMMENT '正確なワード',
   `pvw_type` int(10) unsigned NOT NULL COMMENT 'ワードの種類。pv_typeテーブル参照',
-  `pvw_value` bigint(20) unsigned NOT NULL COMMENT 'ワードの値。pv_valueテーブル参照',
-  PRIMARY KEY (`pvw_id`),
-  UNIQUE KEY `pvw_value` (`pvw_value`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  PRIMARY KEY (`pvw_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=60 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -230,18 +267,65 @@ CREATE TABLE `pv_words` (
 
 LOCK TABLES `pv_words` WRITE;
 /*!40000 ALTER TABLE `pv_words` DISABLE KEYS */;
-INSERT INTO `pv_words` VALUES (1,'木星',1,1024);
-INSERT INTO `pv_words` VALUES (2,'土星',1,2048);
-INSERT INTO `pv_words` VALUES (3,'ヘリオスフィア',1,4096);
-INSERT INTO `pv_words` VALUES (4,'リング',2,1);
-INSERT INTO `pv_words` VALUES (5,'模様',2,2);
-INSERT INTO `pv_words` VALUES (6,'サイズ',2,8);
-INSERT INTO `pv_words` VALUES (7,'木星の模様',2,4);
-INSERT INTO `pv_words` VALUES (8,'衛星',2,16);
-INSERT INTO `pv_words` VALUES (9,'組成',2,32);
-INSERT INTO `pv_words` VALUES (10,'磁場',2,64);
-INSERT INTO `pv_words` VALUES (11,'可愛い',2,128);
-INSERT INTO `pv_words` VALUES (12,'土星の衛星',2,256);
+INSERT INTO `pv_words` VALUES (1,'木星',1);
+INSERT INTO `pv_words` VALUES (2,'土星',1);
+INSERT INTO `pv_words` VALUES (3,'ヘリオスフィア',1);
+INSERT INTO `pv_words` VALUES (4,'リング',2);
+INSERT INTO `pv_words` VALUES (5,'模様',2);
+INSERT INTO `pv_words` VALUES (6,'サイズ',2);
+INSERT INTO `pv_words` VALUES (7,'木星の模様',2);
+INSERT INTO `pv_words` VALUES (8,'衛星',2);
+INSERT INTO `pv_words` VALUES (9,'組成',2);
+INSERT INTO `pv_words` VALUES (10,'磁場',2);
+INSERT INTO `pv_words` VALUES (11,'可愛い',2);
+INSERT INTO `pv_words` VALUES (12,'土星の衛星',2);
+INSERT INTO `pv_words` VALUES (13,'距離',2);
+INSERT INTO `pv_words` VALUES (14,'離心率',2);
+INSERT INTO `pv_words` VALUES (15,'生命',2);
+INSERT INTO `pv_words` VALUES (16,'-未使用-',2);
+INSERT INTO `pv_words` VALUES (17,'共鳴',2);
+INSERT INTO `pv_words` VALUES (18,'木星の衛星',2);
+INSERT INTO `pv_words` VALUES (19,'質量',2);
+INSERT INTO `pv_words` VALUES (20,'密度',2);
+INSERT INTO `pv_words` VALUES (21,'重量',2);
+INSERT INTO `pv_words` VALUES (22,'扁平',2);
+INSERT INTO `pv_words` VALUES (23,'誕生',2);
+INSERT INTO `pv_words` VALUES (24,'自転',2);
+INSERT INTO `pv_words` VALUES (25,'電波',2);
+INSERT INTO `pv_words` VALUES (26,'雷',2);
+INSERT INTO `pv_words` VALUES (27,'探査',2);
+INSERT INTO `pv_words` VALUES (28,'ガス',2);
+INSERT INTO `pv_words` VALUES (29,'主成分',2);
+INSERT INTO `pv_words` VALUES (30,'水素',2);
+INSERT INTO `pv_words` VALUES (31,'空気',2);
+INSERT INTO `pv_words` VALUES (32,'大気',2);
+INSERT INTO `pv_words` VALUES (33,'希ガス',2);
+INSERT INTO `pv_words` VALUES (34,'エンベロープ',2);
+INSERT INTO `pv_words` VALUES (35,'年齢',2);
+INSERT INTO `pv_words` VALUES (36,'冷却',2);
+INSERT INTO `pv_words` VALUES (37,'ダイナモ',2);
+INSERT INTO `pv_words` VALUES (38,'金属水素',2);
+INSERT INTO `pv_words` VALUES (39,'ホットジュピター',2);
+INSERT INTO `pv_words` VALUES (40,'ジュピター',2);
+INSERT INTO `pv_words` VALUES (41,'円盤不安定',2);
+INSERT INTO `pv_words` VALUES (42,'コア',2);
+INSERT INTO `pv_words` VALUES (43,'岩石',2);
+INSERT INTO `pv_words` VALUES (44,'大赤斑',2);
+INSERT INTO `pv_words` VALUES (45,'白斑',2);
+INSERT INTO `pv_words` VALUES (46,'しましま',2);
+INSERT INTO `pv_words` VALUES (47,'雲',2);
+INSERT INTO `pv_words` VALUES (48,'臭い',2);
+INSERT INTO `pv_words` VALUES (49,'色',2);
+INSERT INTO `pv_words` VALUES (50,'温度',2);
+INSERT INTO `pv_words` VALUES (51,'水',2);
+INSERT INTO `pv_words` VALUES (52,'小惑星',2);
+INSERT INTO `pv_words` VALUES (53,'天気',2);
+INSERT INTO `pv_words` VALUES (54,'ボイジャーちゃん',2);
+INSERT INTO `pv_words` VALUES (55,'ガス惑星',2);
+INSERT INTO `pv_words` VALUES (56,'双極子',2);
+INSERT INTO `pv_words` VALUES (57,'半径・直径',2);
+INSERT INTO `pv_words` VALUES (58,'軌道変化',2);
+INSERT INTO `pv_words` VALUES (59,'共鳴運動',2);
 /*!40000 ALTER TABLE `pv_words` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
