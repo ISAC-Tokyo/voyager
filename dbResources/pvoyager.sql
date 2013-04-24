@@ -26,7 +26,7 @@ CREATE TABLE `pv_scenes` (
   `pvc_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `pvc_path` varchar(40) COLLATE utf8_unicode_ci NOT NULL COMMENT 'link path',
   PRIMARY KEY (`pvc_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,6 +45,7 @@ INSERT INTO `pv_scenes` VALUES (7,'ex-jupiter-07.html');
 INSERT INTO `pv_scenes` VALUES (8,'ex-jupiter-08.html');
 INSERT INTO `pv_scenes` VALUES (9,'ex-jupiter-09.html');
 INSERT INTO `pv_scenes` VALUES (10,'ex-jupiter-10.html');
+INSERT INTO `pv_scenes` VALUES (999999,'dummy_good');
 /*!40000 ALTER TABLE `pv_scenes` ENABLE KEYS */;
 UNLOCK TABLES;
 
