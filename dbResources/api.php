@@ -112,7 +112,7 @@ if ($command == "getContext") {
 	}
 
 	$query = "select * from `pv_values` where `pvv_word_ids` in ('0', ".$resultValue.")";
-//	echo $query . "\n";
+	// echo $query . "\n";
 	$res = mysql_query($query);
 	$unknownAnswer = "";
 	$answer = "";
@@ -126,7 +126,7 @@ if ($command == "getContext") {
 		}
 		elseif ( $ret["pvv_word_ids"] == "-1" ) $unknownAnswer = $ret["pvv_result"];
 		else {
-			if ( $answer == "" || $ret["pvv_value"] == $compositePropertyValue) {
+			if ( $answer == "" || $ret["pvv_word_ids"] == ($locationValue . "_" . $compositePropertyValue)) {
 				$answer = $ret["pvv_result"];
 				$sceneId = $ret["pvv_scene_id"];
 			}
