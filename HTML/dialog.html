@@ -21,6 +21,7 @@
 <!--
 	function onClick() {
 		textData = document.getElementById("myText").value;
+		if ( textData == "" ) return;
 		$.get(apiUrl,
 			{cmd: "talk", context:1024, text: encodeURIComponent(textData)},
 			function(data){
@@ -39,6 +40,7 @@
 				herAnswer = herAnswer.split("%2").join("</a>");
 				document.getElementById("herText").innerHTML = herAnswer;
 				window.scrollTo(0, 35);
+				document.getElementById("myText").value = "";
 			});
 	}
 -->
