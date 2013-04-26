@@ -62,7 +62,7 @@ CREATE TABLE `pv_searchwords` (
   `pvs_word_id` int(11) DEFAULT NULL COMMENT '結果単語',
   PRIMARY KEY (`pvs_id`),
   KEY `pvs_sword` (`pvs_sword`)
-) ENGINE=MyISAM AUTO_INCREMENT=201 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=225 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -271,6 +271,30 @@ INSERT INTO `pv_searchwords` VALUES (197,'英語',40);
 INSERT INTO `pv_searchwords` VALUES (198,'遠い',13);
 INSERT INTO `pv_searchwords` VALUES (199,'1人',63);
 INSERT INTO `pv_searchwords` VALUES (200,'丸い',22);
+INSERT INTO `pv_searchwords` VALUES (201,'生まれた',23);
+INSERT INTO `pv_searchwords` VALUES (202,'いつでき',35);
+INSERT INTO `pv_searchwords` VALUES (203,'いつ出来',35);
+INSERT INTO `pv_searchwords` VALUES (204,'いつうまれ',35);
+INSERT INTO `pv_searchwords` VALUES (205,'いつ生まれ',35);
+INSERT INTO `pv_searchwords` VALUES (206,'いつ産まれ',35);
+INSERT INTO `pv_searchwords` VALUES (207,'どこ？',13);
+INSERT INTO `pv_searchwords` VALUES (208,'VOY∀GER',27);
+INSERT INTO `pv_searchwords` VALUES (209,'生物',15);
+INSERT INTO `pv_searchwords` VALUES (210,'形成',9);
+INSERT INTO `pv_searchwords` VALUES (211,'作り',9);
+INSERT INTO `pv_searchwords` VALUES (212,'気温',50);
+INSERT INTO `pv_searchwords` VALUES (213,'名前',62);
+INSERT INTO `pv_searchwords` VALUES (214,'輪っか',4);
+INSERT INTO `pv_searchwords` VALUES (215,'わっか',4);
+INSERT INTO `pv_searchwords` VALUES (216,'何を聞けば',66);
+INSERT INTO `pv_searchwords` VALUES (217,'何をきけば',66);
+INSERT INTO `pv_searchwords` VALUES (218,'何を書けば',66);
+INSERT INTO `pv_searchwords` VALUES (219,'何をかけば',66);
+INSERT INTO `pv_searchwords` VALUES (220,'アンテナ',67);
+INSERT INTO `pv_searchwords` VALUES (221,'こんにちは',68);
+INSERT INTO `pv_searchwords` VALUES (222,'おはよ',69);
+INSERT INTO `pv_searchwords` VALUES (223,'ごめん',70);
+INSERT INTO `pv_searchwords` VALUES (224,'元気',71);
 /*!40000 ALTER TABLE `pv_searchwords` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -315,7 +339,7 @@ CREATE TABLE `pv_values` (
   `pvv_scene_id` int(11) NOT NULL,
   PRIMARY KEY (`pvv_id`),
   KEY `pvv_value` (`pvv_value`)
-) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=72 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -388,6 +412,13 @@ INSERT INTO `pv_values` VALUES (61,-2,'1_54_65','えっ!!……は、恥ずか�
 INSERT INTO `pv_values` VALUES (62,-2,'1_54_62','私はVOY∀GER。地球という惑星から来たのよ。……でもそれ以外の事はあんまり思い出せないの。',2,999999);
 INSERT INTO `pv_values` VALUES (63,-2,'1_54_63','ずっと1人ぼっちで旅をしてたの。だからあなたに逢えて、とっても嬉しい！',2,999999);
 INSERT INTO `pv_values` VALUES (64,-2,'1_54_64','か、彼氏なんていませんよぉ！ でも、双子の妹ならいます！',2,999999);
+INSERT INTO `pv_values` VALUES (65,1040,'1_8_62','木星には%1衛星%2がいくつもあったの',2,2);
+INSERT INTO `pv_values` VALUES (66,-2,'1_66','木星について、知りたいことを聞いて下さい。失ったデータを思い出すかもしれません。',2,999999);
+INSERT INTO `pv_values` VALUES (67,-2,'1_67','あっ、女の子のアンテナ触ろうとしちゃダメですよ、もう！',2,999999);
+INSERT INTO `pv_values` VALUES (68,-2,'1_68','はい、こんにちは！',2,999999);
+INSERT INTO `pv_values` VALUES (69,-2,'1_69','はい、おはようございます！',2,999999);
+INSERT INTO `pv_values` VALUES (70,-2,'1_70','どうしたんですか？ 質問、思いつきませんか？ どんなことでもいいんですよ！',2,999999);
+INSERT INTO `pv_values` VALUES (71,-2,'1_71','はい、私は元気です！うふふ！',2,999999);
 /*!40000 ALTER TABLE `pv_values` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -403,7 +434,7 @@ CREATE TABLE `pv_words` (
   `pvw_word` varchar(20) COLLATE utf8_unicode_ci NOT NULL COMMENT '正確なワード',
   `pvw_type` int(10) unsigned NOT NULL COMMENT 'ワードの種類。pv_typeテーブル参照',
   PRIMARY KEY (`pvw_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=72 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -477,6 +508,12 @@ INSERT INTO `pv_words` VALUES (62,'誰',2);
 INSERT INTO `pv_words` VALUES (63,'孤独',2);
 INSERT INTO `pv_words` VALUES (64,'彼氏',2);
 INSERT INTO `pv_words` VALUES (65,'好き',2);
+INSERT INTO `pv_words` VALUES (66,'質問',2);
+INSERT INTO `pv_words` VALUES (67,'アンテナ',2);
+INSERT INTO `pv_words` VALUES (68,'こんにちは',2);
+INSERT INTO `pv_words` VALUES (69,'おはよう',2);
+INSERT INTO `pv_words` VALUES (70,'ごめんなさい',2);
+INSERT INTO `pv_words` VALUES (71,'元気',2);
 /*!40000 ALTER TABLE `pv_words` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
